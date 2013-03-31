@@ -7,10 +7,10 @@
 //
 //
 
-#import "cocos2d.h"
+#import <Foundation/Foundation.h>
 
-@interface ProblemGenerator : CCLayer
+@interface ProblemGenerator : NSObject
 
--(NSMutableArray*) loadProblem;
++(NSMutableArray*) loadProblem;
 
 @end

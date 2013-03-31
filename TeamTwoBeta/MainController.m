@@ -15,6 +15,7 @@
 {
     if(self = [super init]){
         [self scheduleUpdate];
+        [self loadNewProblem];
     }
     
     return self;
@@ -23,7 +24,7 @@
 -(void) loadNewProblem
 {
     // Get the questions and answers from the problem generator.
-    NSMutableArray *questionAndAnswers = [problemGenerator loadProblem];
+    NSMutableArray *questionAndAnswers = [ProblemGenerator loadProblem];
     
     // Set the math problem.
     [mathProblemView setMathProblem:[questionAndAnswers objectAtIndex:0]];

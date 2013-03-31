@@ -11,18 +11,25 @@
 
 @implementation ProblemGenerator
 
--(NSMutableArray*) loadProblem
++(NSMutableArray*) loadProblem
 {
     // Hard coded for initial iteration.
     
     NSMutableArray *questionAndAnswers = [[NSMutableArray alloc] init];
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"problems" ofType:@"txt"];
+    
+    NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSMutableArray* allLinedStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    int questionChoice = arc4random()%9*5;
     
     // Create the button objects
-    [questionAndAnswers addObject:@"7x = 77"];
-    [questionAndAnswers addObject:@"9"];
-    [questionAndAnswers addObject:@"10"];
-    [questionAndAnswers addObject:@"11"];
-    [questionAndAnswers addObject:@"12"];
+    NSLog([allLinedStrings objectAtIndex:questionChoice]);
+    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:questionChoice]];
+    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:(questionChoice+1)]];
+    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:(questionChoice+2)]];
+    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:(questionChoice+3)]];
+    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:(questionChoice+4)]];
     
     return questionAndAnswers;
 }
