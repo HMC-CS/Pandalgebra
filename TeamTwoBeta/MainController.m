@@ -15,7 +15,17 @@
 {
     if(self = [super init]){
         [self scheduleUpdate];
-        [self loadNewProblem];
+        
+        mathProblemView = [MathProblemView node];
+        [self addChild:mathProblemView];
+        
+        answerBarView = [AnswerBarView node];
+        [self addChild:answerBarView];
+        
+        characterView = [CharacterView node];
+        [self addChild:characterView];
+        
+        //[self loadNewProblem];
     }
     
     return self;
@@ -40,21 +50,12 @@
 
 - (void)update:(ccTime)deltaTime
 {
-   
+    //NSLog(@"%f",[answerBarView getPlatformPosition:0].x);
 }
 
 + (CCScene*)scene
 {
     CCScene *scene = [CCScene node];
-    
-    MathProblemView *mathProblemLayer = [MathProblemView node];
-    [scene addChild:mathProblemLayer];
-    
-    AnswerBarView *answerBarLayer = [AnswerBarView node];
-    [scene addChild:answerBarLayer];
-    
-    CharacterView *characterLayer = [CharacterView node];
-    [scene addChild:characterLayer];
     
     MainController *mainController = [self node];
     [scene addChild:mainController];
