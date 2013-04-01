@@ -14,7 +14,6 @@
 -(id) init
 {
     if (self = [super init]) {
-        
         NUM_ANSWERS = 4;
         
         // Initialize the container for the answer labels
