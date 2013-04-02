@@ -81,8 +81,11 @@
     character_pos.x += character_vel.x * deltaTime;
     
     CGSize character_size = character.contentSize;
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    float max_x = width-character_size.width/2;
+    
+    // Since the game is meant to be played in landscape mode,
+    // the height of the iPad coordinates to our x-axis.
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    float max_x = height-character_size.width/2;
     float min_x = 0+character_size.width/2;
     
     if(character_pos.x>max_x) character_pos.x=max_x;
@@ -141,7 +144,7 @@
     // We add in the absolute value of the x velocity
     // to account for the tilting, so we follow the
     // laws of motion.
-    character_vel.y = 700.0f+ fabsf(character_vel.x);
+    character_vel.y = 600.0f+ fabsf(character_vel.x);
 }
 
 -(void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration *)acceleration
@@ -149,10 +152,16 @@
     // This variable affects how fast the character moves
     // when the screen is tilted.
     float accel_filter = 0.1f;
+    // We take the absolute value of the accelerometer data
+    // to account for what orientation the iPad is in.
+    UIAccelerationValue accelerate = acceleration.y;
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft){
+        accelerate = -1*(accelerate);
+    }
     // Because we don't care what happens when we tilt
     // vertically, we only change the x velocity
     // when we tilt.
-    character_vel.x = character_vel.x * accel_filter + acceleration.x * (1.0f - accel_filter) * 500.0f;
+    character_vel.x = character_vel.x * accel_filter + accelerate * (1.0f - accel_filter) * 500.0f;
 }
 
 @end
