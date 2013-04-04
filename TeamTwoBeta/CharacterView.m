@@ -41,37 +41,36 @@
     return self;
 }
 
--(BOOL) answerSelected:(NSArray*) platforms
+-(int) answerSelected:(NSArray*) platforms
 {   
-    if (character_vel.y < 0.0) {
-        // Consider each platform.
-        // plathform width and height need to be confirmed
+    // Consider each platform.
+    // plathform width and height need to be confirmed
         
-        float platformWidth = 100.0;
-        float platformImpactHeight = 40.0;
+    float platformWidth = 100.0;
+    float platformImpactHeight = 40.0;
         
-        for (int p = 0; p < NUM_ANSWERS; p++) {
-            NSValue *val = [platforms objectAtIndex:p];
-            CGPoint currentPlatform = [val CGPointValue];
-            float PlatformMaxX = currentPlatform.x + platformWidth/2.0;
-			float PlatformMinX = currentPlatform.x - platformWidth/2.0;
-            float PlatformMaxY = currentPlatform.y + (platformImpactHeight+50)/2.0;
-            float PlatformMinY = currentPlatform.y - platformImpactHeight/2.0;
+    for (int p = 0; p < NUM_ANSWERS; p++) {
+        NSValue *val = [platforms objectAtIndex:p];
+        CGPoint currentPlatform = [val CGPointValue];
+        float PlatformMaxX = currentPlatform.x + platformWidth/2.0;
+        float PlatformMinX = currentPlatform.x - platformWidth/2.0;
+        float PlatformMaxY = currentPlatform.y + (platformImpactHeight+50)/2.0;
+        float PlatformMinY = currentPlatform.y - platformImpactHeight/2.0;
+        
+        if(character_pos.x < PlatformMaxX &&
+            character_pos.x > PlatformMinX &&
+            character_pos.y < PlatformMaxY &&
+            character_pos.y > PlatformMinY) {
             
-            if(character_pos.x < PlatformMaxX &&
-			   character_pos.x > PlatformMinX &&
-			   character_pos.y < PlatformMaxY &&
-			   character_pos.y > PlatformMinY) {
-                
-                return TRUE;
-			} 
+            return p;
         }
     }
-    return FALSE;
+    // Not over a platform.
+    return -1;
 }
 
 
-- (void)update:(ccTime)deltaTime : (NSArray*)platforms
+- (void)update:(ccTime)deltaTime withPlatforms: (NSArray*)platforms andAnswer: (int)correctAnswer
 {
     // Grab data about the character.
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
@@ -105,12 +104,15 @@
     }
     
 	character.position = character_pos;
-    
-    if ([self answerSelected: platforms] == TRUE) {
-        NSLog(@"Character Answer Collision Detected");
-        [self jump];
+    if (character_vel.y < 0.0) {
+        int currentAirspace = [self answerSelected: platforms];
+        if (currentAirspace == correctAnswer) {
+            NSLog(@"Character landed on correct answer!");
+        }
+        if (currentAirspace != -1) {
+            [self jump];
+        }
     }
-
 }
 
 

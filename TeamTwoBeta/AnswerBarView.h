@@ -12,13 +12,16 @@
 @interface AnswerBarView : CCLayer
 {
     NSMutableArray *answerOptionsContainer;
+    int _correctAnswer;
     int NUM_ANSWERS;
 }
 
--(void) answerSelected;
 -(void) setAnswerOptions: (NSString*) first secondOption: (NSString*) second thirdOption: (NSString*) third fourthOption: (NSString*) fourth;
 -(void) resetPlatforms;
+-(void) answerSelected;
 -(CGPoint) getPlatformPosition: (int) platformTag;
--(void)update:(ccTime) deltaTime;
+-(void) update: (ccTime) deltaTime;
+
+@property int correctAnswer;
 
 @end

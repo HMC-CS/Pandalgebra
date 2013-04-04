@@ -58,7 +58,7 @@
                           [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:3]],
                           nil];
     
-    [characterView update:deltaTime:platforms];
+    [characterView update: deltaTime withPlatforms:platforms andAnswer:answerBarView.correctAnswer];
 }
 
 + (CCScene*)scene

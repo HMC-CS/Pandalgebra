@@ -9,6 +9,7 @@
 #import "AnswerBarView.h"
 
 @implementation AnswerBarView
+@synthesize correctAnswer = _correctAnswer;
 
 // Sets the answer sprites and labels up.
 -(id) init
@@ -20,6 +21,7 @@
         answerOptionsContainer = [[NSMutableArray alloc] init];
         
         // The hard coded answers for the first iteration
+        _correctAnswer = 2;
         NSString* first = @"9";
         NSString* second = @"10";
         NSString* third = @"11";
@@ -94,7 +96,6 @@
     CCSprite *platform = (CCSprite*)[batchNode getChildByTag:platformTag];
     return platform.position;
 }
-
 
 - (void)update:(ccTime) deltaTime
 {

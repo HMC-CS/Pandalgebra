@@ -20,6 +20,7 @@
 }
 -(id) init;
 -(BOOL) answerSelected:(NSArray*) platforms;
--(void) update:(ccTime)deltaTime : (NSArray*) platforms;
+-(void)update:(ccTime)deltaTime withPlatforms: (NSArray*)platforms andAnswer:
+        (int)correctAnswer;
 
 @end
