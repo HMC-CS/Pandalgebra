@@ -50,7 +50,15 @@
 
 - (void)update:(ccTime)deltaTime
 {
-    //NSLog(@"%f",[answerBarView getPlatformPosition:0].x);
+    // We'll always have 4 possible answers/platforms
+    NSArray* platforms = [NSArray arrayWithObjects:
+                          [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:0]],
+                          [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:1]],
+                          [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:2]],
+                          [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:3]],
+                          nil];
+    
+    [characterView update:deltaTime:platforms];
 }
 
 + (CCScene*)scene

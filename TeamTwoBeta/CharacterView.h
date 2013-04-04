@@ -19,7 +19,7 @@
     
 }
 -(id) init;
--(BOOL) answerSelected;
--(void) update:(ccTime)deltaTime;
+-(BOOL) answerSelected:(NSArray*) platforms;
+-(void) update:(ccTime)deltaTime : (NSArray*) platforms;
 
 @end

@@ -34,14 +34,14 @@
         
         [self resetCharacter];
         
-        [self schedule:@selector(update:)];
+        //[self schedule:@selector(update:)];
         
     }
     
     return self;
 }
 
--(BOOL) answerSelected
+-(BOOL) answerSelected:(NSArray*) platforms
 {   
     if (character_vel.y < 0.0) {
         // Consider each platform.
@@ -51,8 +51,8 @@
         float platformImpactHeight = 40.0;
         
         for (int p = 0; p < NUM_ANSWERS; p++) {
-            
-            CGPoint currentPlatform = ccp(200 + 200*p, 300);
+            NSValue *val = [platforms objectAtIndex:p];
+            CGPoint currentPlatform = [val CGPointValue];
             float PlatformMaxX = currentPlatform.x + platformWidth/2.0;
 			float PlatformMinX = currentPlatform.x - platformWidth/2.0;
             float PlatformMaxY = currentPlatform.y + (platformImpactHeight+50)/2.0;
@@ -71,7 +71,7 @@
 }
 
 
-- (void)update:(ccTime)deltaTime
+- (void)update:(ccTime)deltaTime : (NSArray*)platforms
 {
     // Grab data about the character.
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
@@ -106,7 +106,7 @@
     
 	character.position = character_pos;
     
-    if ([self answerSelected] == TRUE) {
+    if ([self answerSelected: platforms] == TRUE) {
         NSLog(@"Character Answer Collision Detected");
         [self jump];
     }
