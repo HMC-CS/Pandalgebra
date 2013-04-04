@@ -16,11 +16,14 @@
     ccVertex2F character_vel;
     ccVertex2F character_acc;
     int NUM_ANSWERS;
+    BOOL _answerHit;
     
 }
 -(id) init;
 -(BOOL) answerSelected:(NSArray*) platforms;
 -(void)update:(ccTime)deltaTime withPlatforms: (NSArray*)platforms andAnswer:
         (int)correctAnswer;
+
+@property BOOL answerHit;
 
 @end

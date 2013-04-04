@@ -10,6 +10,7 @@
 #import "CharacterView.h"
 
 @implementation CharacterView
+@synthesize answerHit = _answerHit;
 
 // Sets the character sprite up.
 -(id) init
@@ -108,6 +109,7 @@
         int currentAirspace = [self answerSelected: platforms];
         if (currentAirspace == correctAnswer) {
             NSLog(@"Character landed on correct answer!");
+            _answerHit = TRUE;
         }
         if (currentAirspace != -1) {
             [self jump];

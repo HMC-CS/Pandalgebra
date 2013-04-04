@@ -50,6 +50,9 @@
 
 - (void)update:(ccTime)deltaTime
 {
+    if (characterView.answerHit){
+        [answerBarView answerSelected];
+    }
     // We'll always have 4 possible answers/platforms
     NSArray* platforms = [NSArray arrayWithObjects:
                           [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:0]],

@@ -36,7 +36,7 @@
         }
         
         // This batchNode has children sprites with images from some subset of platform.png.
-        CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"platform.png" capacity:NUM_ANSWERS];
+        CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"platforms.png" capacity:NUM_ANSWERS];
         [self addChild:batchNode z:-1 tag:0];
         
         // The image for the platform is in the specified range of sprites.png.
@@ -58,7 +58,13 @@
 // Handles what happens when an answer is chosen by the player/character
 -(void) answerSelected
 {
-    // Do nothing, currently.
+    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
+    CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 40, 100, 40)];
+    //CCSprite *currentPlatform = (CCSprite*)[batchNode getChildByTag:_correctAnswer];
+    [batchNode removeChildByTag:_correctAnswer cleanup:TRUE];
+    [batchNode addChild:platform z:3 tag:_correctAnswer];
+    [self resetPlatforms];
+
 }
 
 // Move the platforms to their initial positions
