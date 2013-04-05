@@ -16,7 +16,6 @@
 -(id) init
 {
     if (self = [super init]) {
-        // Set the number of answers to 4.
         NUM_ANSWERS = 4;
         
         // This batchNode has children sprites with images from some subset of character.png.
@@ -34,8 +33,6 @@
         [[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0 / 60)];
         
         [self resetCharacter];
-        
-        //[self schedule:@selector(update:)];
         
     }
     
@@ -94,6 +91,8 @@
     character_vel.y += character_acc.y* deltaTime;
     character_pos.y += character_vel.y* deltaTime;
     
+    // Making sure the character doesn't fall through
+    // the bottom of the screen.
     if(character_pos.y < 0)
     {
         character_vel.y = 0;
@@ -148,7 +147,7 @@
     // We add in the absolute value of the x velocity
     // to account for the tilting, so we follow the
     // laws of motion.
-    character_vel.y = 600.0f+ fabsf(character_vel.x);
+    character_vel.y = 600.0f + fabsf(character_vel.x);
 }
 
 -(void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration *)acceleration

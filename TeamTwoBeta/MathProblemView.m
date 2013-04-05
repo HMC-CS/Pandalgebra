@@ -21,10 +21,9 @@
         [self addChild:background];
         
         // Initialize and add Math Problem to Screen/View
-        mathProblem = [self setMathProblem:@"7x = 77"];
-        [self addChild:mathProblem];
-        
-        [self schedule:@selector(update:)];
+        CCLabelTTF* label = [CCLabelTTF labelWithString: @"" fontName:@"Arial" fontSize:50];
+        //label.position = ccp(500, 600);
+        [self addChild:label z:1 tag:1];
     }
     
     return self;
@@ -32,12 +31,14 @@
 
 
 
--(CCLabelTTF*) setMathProblem: (NSString*) problem
+-(void) setMathProblem: (NSString*) problem
 {
-    
-    CCLabelTTF* label = [CCLabelTTF labelWithString: problem fontName:@"Arial" fontSize:150];
+    CCLabelTTF* label = [CCLabelTTF labelWithString: problem fontName:@"Arial" fontSize:50];
     label.position = ccp(500, 600);
-    return label;
+    mathProblem = label;
+    //CCNode* child = [self getChildByTag:1];
+    [self removeChildByTag:1 cleanup:TRUE];
+    [self addChild:label z:1 tag:1];
 }
 
 - (void)update:(ccTime)deltaTime

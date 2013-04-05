@@ -21,23 +21,25 @@
         answerOptionsContainer = [[NSMutableArray alloc] init];
         
         // The hard coded answers for the first iteration
-        _correctAnswer = 2;
-        NSString* first = @"9";
-        NSString* second = @"10";
-        NSString* third = @"11";
-        NSString* fourth = @"12";
+        _correctAnswer = 0;
         
-        [self setAnswerOptions:first secondOption:second thirdOption:third fourthOption:fourth];
+        // Add labels to answerOptionsContainer
+        for (int i = 0; i < NUM_ANSWERS; i++)
+        {
+            CCLabelTTF* label = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:40];
+            label.position = ccp(200 + 200*i, 300);
+            [answerOptionsContainer addObject:label];
+        }
         
         // Add the answer option labels to this view
         for (int i = 0; i < NUM_ANSWERS; i++)
         {
-            [self addChild: [answerOptionsContainer objectAtIndex:i]];
+            [self addChild: [answerOptionsContainer objectAtIndex:i] z: 1 tag: i];
         }
         
         // This batchNode has children sprites with images from some subset of platform.png.
         CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"platforms.png" capacity:NUM_ANSWERS];
-        [self addChild:batchNode z:-1 tag:0];
+        [self addChild:batchNode z:-1 tag:4];
         
         // The image for the platform is in the specified range of sprites.png.
         // Therefore, make the platforms children of the batchNode.
@@ -60,17 +62,25 @@
 {
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
     CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 40, 100, 40)];
-    //CCSprite *currentPlatform = (CCSprite*)[batchNode getChildByTag:_correctAnswer];
     [batchNode removeChildByTag:_correctAnswer cleanup:TRUE];
     [batchNode addChild:platform z:3 tag:_correctAnswer];
     [self resetPlatforms];
 
 }
 
+-(void) answerUnselected
+{
+    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
+    CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 0, 100, 40)];
+    [batchNode removeChildByTag:_correctAnswer cleanup:TRUE];
+    [batchNode addChild:platform z:3 tag:_correctAnswer];
+    [self resetPlatforms];
+}
+
 // Move the platforms to their initial positions
 -(void) resetPlatforms
 {
-    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
+    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
     
     for (int p = 0; p < NUM_ANSWERS; p++)
     {
@@ -81,6 +91,11 @@
 
 -(void) setAnswerOptions: (NSString*) first secondOption: (NSString*) second thirdOption: (NSString*) third fourthOption: (NSString*) fourth
 {
+    // Reset previous correct platform
+    [self answerUnselected];
+    
+    [answerOptionsContainer removeAllObjects];
+    
     // Add labels to answerOptionsContainer
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: first fontName:@"Arial" fontSize:40]];
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: second fontName:@"Arial" fontSize:40]];
@@ -94,11 +109,18 @@
         label.position = ccp(200 + 200*i, 300);
         [answerOptionsContainer replaceObjectAtIndex:i withObject:label];
     }
+    
+    // Add the answer option labels to this view
+    for (int i = 0; i < NUM_ANSWERS; i++)
+    {
+        [self removeChildByTag:i cleanup:TRUE];
+        [self addChild:[answerOptionsContainer objectAtIndex:i] z:1 tag:i];
+    }
 }
 
 - (CGPoint) getPlatformPosition: (int) platformTag
 {
-    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
+    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
     CCSprite *platform = (CCSprite*)[batchNode getChildByTag:platformTag];
     return platform.position;
 }

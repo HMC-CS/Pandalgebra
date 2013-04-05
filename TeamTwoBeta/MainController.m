@@ -25,7 +25,7 @@
         characterView = [CharacterView node];
         [self addChild:characterView];
         
-        //[self loadNewProblem];
+        [self loadNewProblem];
     }
     
     return self;
@@ -52,6 +52,8 @@
 {
     if (characterView.answerHit){
         [answerBarView answerSelected];
+        [self loadNewProblem];
+        characterView.answerHit = FALSE;
     }
     // We'll always have 4 possible answers/platforms
     NSArray* platforms = [NSArray arrayWithObjects:

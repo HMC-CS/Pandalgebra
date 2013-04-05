@@ -21,15 +21,14 @@
     NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     NSMutableArray* allLinedStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
-    int questionChoice = arc4random()%9*5;
+    // Groups of 5 because one line of question
+    // and 4 lines of answers.
+    int questionChoice = (arc4random()%9)*5;
     
     // Create the button objects
-    NSLog([allLinedStrings objectAtIndex:questionChoice]);
-    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:questionChoice]];
-    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:(questionChoice+1)]];
-    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:(questionChoice+2)]];
-    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:(questionChoice+3)]];
-    [questionAndAnswers addObject:[allLinedStrings objectAtIndex:(questionChoice+4)]];
+    for (int i = 0; i < 5; i++){
+        [questionAndAnswers addObject:[allLinedStrings objectAtIndex:questionChoice+i]];
+    }
     
     return questionAndAnswers;
 }

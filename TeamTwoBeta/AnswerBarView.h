@@ -19,8 +19,10 @@
 -(void) setAnswerOptions: (NSString*) first secondOption: (NSString*) second thirdOption: (NSString*) third fourthOption: (NSString*) fourth;
 -(void) resetPlatforms;
 -(void) answerSelected;
+-(void) answerUnselected;
 -(CGPoint) getPlatformPosition: (int) platformTag;
 -(void) update: (ccTime) deltaTime;
+
 
 @property int correctAnswer;
 

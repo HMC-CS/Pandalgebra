@@ -14,7 +14,7 @@
     CCLabelTTF* mathProblem;
 }
 
--(CCLabelTTF*) setMathProblem: (NSString*) problem;
+-(void) setMathProblem: (NSString*) problem;
 -(void)update:(ccTime)deltaTime;
 
 @end
