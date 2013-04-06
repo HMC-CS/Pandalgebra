@@ -105,12 +105,13 @@
     
 	character.position = character_pos;
     if (character_vel.y < 0.0) {
-        int currentAirspace = [self answerSelected: platforms];
-        if (currentAirspace == correctAnswer) {
+        int chosenAnswer = [self answerSelected: platforms];
+        if (chosenAnswer == correctAnswer) {
             NSLog(@"Character landed on correct answer!");
+            NSLog(@"correct answer index correctAnswer =%d", correctAnswer);
             _answerHit = TRUE;
         }
-        if (currentAirspace != -1) {
+        if (chosenAnswer != -1) {
             [self jump];
         }
     }

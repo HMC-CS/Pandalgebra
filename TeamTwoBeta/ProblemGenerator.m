@@ -19,7 +19,7 @@
     NSString* path = [[NSBundle mainBundle] pathForResource:@"problems" ofType:@"txt"];
     
     NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    NSMutableArray* allLinedStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    NSArray* allLinedStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
     // Groups of 5 because one line of question
     // and 4 lines of answers.

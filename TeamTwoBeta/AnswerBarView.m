@@ -9,7 +9,7 @@
 #import "AnswerBarView.h"
 
 @implementation AnswerBarView
-@synthesize correctAnswer = _correctAnswer;
+@synthesize correctAnswer;
 
 // Sets the answer sprites and labels up.
 -(id) init
@@ -21,7 +21,7 @@
         answerOptionsContainer = [[NSMutableArray alloc] init];
         
         // The hard coded answers for the first iteration
-        _correctAnswer = 0;
+        //_correctAnswer = 4;
         
         // Add labels to answerOptionsContainer
         for (int i = 0; i < NUM_ANSWERS; i++)
@@ -95,12 +95,37 @@
     [self answerUnselected];
     
     [answerOptionsContainer removeAllObjects];
+    NSMutableArray *answerOptionsStrings = [[NSMutableArray alloc] init];
+    [answerOptionsStrings addObject:first];
+    [answerOptionsStrings addObject:second];
+    [answerOptionsStrings addObject:third];
+    [answerOptionsStrings addObject:fourth];
+    
+    
     
     // Add labels to answerOptionsContainer
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: first fontName:@"Arial" fontSize:40]];
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: second fontName:@"Arial" fontSize:40]];
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: third fontName:@"Arial" fontSize:40]];
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: fourth fontName:@"Arial" fontSize:40]];
+    
+    
+    // Randomize order of answers
+    for (int i=3; i>=0; i--) {
+        int j = arc4random()%(i+1);
+        [answerOptionsContainer exchangeObjectAtIndex:i withObjectAtIndex:j];
+        [answerOptionsStrings exchangeObjectAtIndex:i withObjectAtIndex:j];
+    }
+    
+    // Find index of correct answer
+    for (int i = 0; i< NUM_ANSWERS; i++) {
+        if ([answerOptionsStrings objectAtIndex:i] == first){
+            _correctAnswer=i;
+        }
+    }
+    correctAnswer = _correctAnswer;
+
+    
     
     // Set the position for all the labels in answerOptionsContainer
     for (int i = 0; i < NUM_ANSWERS; i++)
