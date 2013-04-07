@@ -63,6 +63,15 @@
     [self resetPlatforms];
 }
 
+-(void) wrongAnswerSelected: (int) tag
+{
+    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
+    CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 80, 100, 40)];
+    [batchNode removeChildByTag:tag cleanup:TRUE];
+    [batchNode addChild:platform z:3 tag:tag];
+    [self resetPlatforms];
+}
+
 -(void) answerUnselected
 {
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];

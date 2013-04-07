@@ -20,6 +20,7 @@
 -(void) randomizeAnswerOrder: (NSString*) first;
 -(void) resetPlatforms;
 -(void) answerSelected;
+-(void) wrongAnswerSelected: (int) tag;
 -(void) answerUnselected;
 -(CGPoint) getPlatformPosition: (int) platformTag;
 -(void) update: (ccTime) deltaTime;

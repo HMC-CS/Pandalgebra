@@ -16,7 +16,7 @@
     ccVertex2F character_vel;
     ccVertex2F character_acc;
     int NUM_ANSWERS;
-    BOOL _answerHit;
+    int _answerHit;
     
 }
 -(id) init;
@@ -30,6 +30,6 @@
 -(void)accelerometer:(UIAccelerometer*) accelerometer
        didAccelerate:(UIAcceleration *) acceleration;
 
-@property BOOL answerHit;
+@property int answerHit;
 
 @end

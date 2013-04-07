@@ -53,14 +53,18 @@
 
 - (void)update:(ccTime)deltaTime
 {
-    if (characterView.answerHit){
+    if (characterView.answerHit == answerBarView.correctAnswer){
         [answerBarView answerSelected];
         [characterView stopCharacter];
         //[NSTimer scheduledTimerWithTimeInterval:2 target:characterView selector:@selector(resetCharacter:) userInfo:nil repeats:NO];
         [NSTimer scheduledTimerWithTimeInterval:2 target:self
                                 selector:@selector(loadNewProblem) userInfo:nil repeats:NO];
         //[self loadNewProblem];
-        characterView.answerHit = FALSE;
+        characterView.answerHit = -1;
+    }
+    else if (characterView.answerHit != -1){
+        [answerBarView wrongAnswerSelected: characterView.answerHit];
+        characterView.answerHit = -1;
     }
     // We'll always have 4 possible answers/platforms
     NSArray* platforms = [NSArray arrayWithObjects:

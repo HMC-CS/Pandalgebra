@@ -18,6 +18,8 @@
     if (self = [super init]) {
         NUM_ANSWERS = 4;
         
+        _answerHit = -1;
+        
         // This batchNode has children sprites with images from some subset of character.png.
         CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"character.png" capacity:1];
         [self addChild:batchNode z:-1 tag:0];
@@ -105,11 +107,12 @@
 	character.position = character_pos;
     if (character_vel.y < 0.0) {
         int chosenAnswer = [self answerSelected: platforms];
-        if (chosenAnswer == correctAnswer) {
-            NSLog(@"Character landed on correct answer!");
-            NSLog(@"correct answer index correctAnswer =%d", correctAnswer);
-            _answerHit = TRUE;
-        }
+        _answerHit = chosenAnswer;
+//        if (chosenAnswer == correctAnswer) {
+//            NSLog(@"Character landed on correct answer!");
+//            NSLog(@"correct answer index correctAnswer =%d", correctAnswer);
+//            _answerHit = TRUE;
+//        }
         if (chosenAnswer != -1) {
             [self jump];
         }
