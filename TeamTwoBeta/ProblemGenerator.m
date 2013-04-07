@@ -13,8 +13,6 @@
 
 +(NSMutableArray*) loadProblem
 {
-    // Hard coded for initial iteration.
-    
     NSMutableArray *questionAndAnswers = [[NSMutableArray alloc] init];
     NSString* path = [[NSBundle mainBundle] pathForResource:@"problems" ofType:@"txt"];
     

@@ -33,7 +33,6 @@
         [[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0 / 60)];
         
         [self resetCharacter];
-        
     }
     
     return self;
@@ -117,7 +116,6 @@
     }
 }
 
-
 -(void) dealloc
 {
     [super dealloc];
@@ -138,13 +136,21 @@
     
     character_acc.x = 0;
     character_acc.y = -550.f;  //Start with negative y acceleration so character falls
+}
+
+-(void) stopCharacter
+{
+    character_vel.x = 0;
+    character_vel.y = 0;
     
-    
+    character_acc.x = 0;
+    character_acc.y = 0;
 }
 
 // Controls how high the character jumps.
 // The higher the variable, the higher the jump.
--(void) jump{
+-(void) jump
+{
     // We add in the absolute value of the x velocity
     // to account for the tilting, so we follow the
     // laws of motion.

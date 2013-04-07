@@ -3,13 +3,14 @@
 //  TeamTwoBeta
 //
 //  Created by Ari Schlesinger, Abby Gregory, Izzy Funke, and Miranda Parker on 3/29/13.
-//  Copyright Ari Schlesinger, Abby Gregory, Izzy Funke, and Miranda Parker 2013. All rights reserved.//
+//  Copyright Ari Schlesinger, Abby Gregory, Izzy Funke, and Miranda Parker 2013.
+//  All rights reserved.
 //
 
 #import "AnswerBarView.h"
 
 @implementation AnswerBarView
-@synthesize correctAnswer;
+@synthesize correctAnswer = _correctAnswer;
 
 // Sets the answer sprites and labels up.
 -(id) init
@@ -19,9 +20,6 @@
         
         // Initialize the container for the answer labels
         answerOptionsContainer = [[NSMutableArray alloc] init];
-        
-        // The hard coded answers for the first iteration
-        //_correctAnswer = 4;
         
         // Add labels to answerOptionsContainer
         for (int i = 0; i < NUM_ANSWERS; i++)
@@ -50,8 +48,6 @@
         }
         
         [self resetPlatforms];
-        
-        [self schedule:@selector(update:)];
     }
     
     return self;
@@ -60,17 +56,16 @@
 // Handles what happens when an answer is chosen by the player/character
 -(void) answerSelected
 {
-    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
+    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
     CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 40, 100, 40)];
     [batchNode removeChildByTag:_correctAnswer cleanup:TRUE];
     [batchNode addChild:platform z:3 tag:_correctAnswer];
     [self resetPlatforms];
-
 }
 
 -(void) answerUnselected
 {
-    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
+    CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
     CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 0, 100, 40)];
     [batchNode removeChildByTag:_correctAnswer cleanup:TRUE];
     [batchNode addChild:platform z:3 tag:_correctAnswer];
@@ -94,38 +89,14 @@
     // Reset previous correct platform
     [self answerUnselected];
     
-    [answerOptionsContainer removeAllObjects];
-    NSMutableArray *answerOptionsStrings = [[NSMutableArray alloc] init];
-    [answerOptionsStrings addObject:first];
-    [answerOptionsStrings addObject:second];
-    [answerOptionsStrings addObject:third];
-    [answerOptionsStrings addObject:fourth];
-    
-    
-    
     // Add labels to answerOptionsContainer
+    [answerOptionsContainer removeAllObjects];
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: first fontName:@"Arial" fontSize:40]];
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: second fontName:@"Arial" fontSize:40]];
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: third fontName:@"Arial" fontSize:40]];
     [answerOptionsContainer addObject:[CCLabelTTF labelWithString: fourth fontName:@"Arial" fontSize:40]];
     
-    
-    // Randomize order of answers
-    for (int i=3; i>=0; i--) {
-        int j = arc4random()%(i+1);
-        [answerOptionsContainer exchangeObjectAtIndex:i withObjectAtIndex:j];
-        [answerOptionsStrings exchangeObjectAtIndex:i withObjectAtIndex:j];
-    }
-    
-    // Find index of correct answer
-    for (int i = 0; i< NUM_ANSWERS; i++) {
-        if ([answerOptionsStrings objectAtIndex:i] == first){
-            _correctAnswer=i;
-        }
-    }
-    correctAnswer = _correctAnswer;
-
-    
+    [self randomizeAnswerOrder: first];
     
     // Set the position for all the labels in answerOptionsContainer
     for (int i = 0; i < NUM_ANSWERS; i++)
@@ -140,6 +111,18 @@
     {
         [self removeChildByTag:i cleanup:TRUE];
         [self addChild:[answerOptionsContainer objectAtIndex:i] z:1 tag:i];
+    }
+}
+
+- (void) randomizeAnswerOrder: (NSString*) first
+{
+    // Randomize order of answers
+    for (int i=3; i>=0; i--) {
+        int j = arc4random()%(i+1);
+        [answerOptionsContainer exchangeObjectAtIndex:i withObjectAtIndex:j];
+        // Check whether the placed answers is the correct answer.
+        if ([[answerOptionsContainer objectAtIndex: i] string] == first)
+            _correctAnswer = i;
     }
 }
 

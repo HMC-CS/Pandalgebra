@@ -23,6 +23,12 @@
 -(int) answerSelected:(NSArray*) platforms;
 -(void)update:(ccTime)deltaTime withPlatforms: (NSArray*)platforms andAnswer:
         (int)correctAnswer;
+-(void) dealloc;
+-(void) resetCharacter;
+-(void) stopCharacter;
+-(void) jump;
+-(void)accelerometer:(UIAccelerometer*) accelerometer
+       didAccelerate:(UIAcceleration *) acceleration;
 
 @property BOOL answerHit;
 

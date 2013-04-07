@@ -17,6 +17,7 @@
 }
 
 -(void) setAnswerOptions: (NSString*) first secondOption: (NSString*) second thirdOption: (NSString*) third fourthOption: (NSString*) fourth;
+-(void) randomizeAnswerOrder: (NSString*) first;
 -(void) resetPlatforms;
 -(void) answerSelected;
 -(void) answerUnselected;

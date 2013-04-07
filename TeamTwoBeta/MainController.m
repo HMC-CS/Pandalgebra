@@ -33,6 +33,9 @@
 
 -(void) loadNewProblem
 {
+    // Start the character back up.
+    [characterView resetCharacter];
+    
     // Get the questions and answers from the problem generator.
     NSMutableArray *questionAndAnswers = [ProblemGenerator loadProblem];
     
@@ -52,7 +55,11 @@
 {
     if (characterView.answerHit){
         [answerBarView answerSelected];
-        [self loadNewProblem];
+        [characterView stopCharacter];
+        //[NSTimer scheduledTimerWithTimeInterval:2 target:characterView selector:@selector(resetCharacter:) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:2 target:self
+                                selector:@selector(loadNewProblem) userInfo:nil repeats:NO];
+        //[self loadNewProblem];
         characterView.answerHit = FALSE;
     }
     // We'll always have 4 possible answers/platforms
