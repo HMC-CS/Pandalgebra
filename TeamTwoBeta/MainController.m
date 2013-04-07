@@ -26,6 +26,18 @@
         [self addChild:characterView];
         
         [self loadNewProblem];
+        
+        // Scoring Properties Initalized Here
+        numWrongChoices = 0;
+        
+        score = 0;
+        scoreLabel = [CCLabelTTF labelWithString:@"0" fontName:@"Arial" fontSize:24];
+        scoreLabel.position = ccp(140, 20);
+        [self addChild:scoreLabel z:1];
+        
+        scoreWordLabel = [CCLabelTTF labelWithString:@"SCORE:" fontName:@"Arial" fontSize:24];
+        scoreWordLabel.position = ccp(60, 20);
+        [self addChild:scoreWordLabel z:1];
     }
     
     return self;
@@ -51,20 +63,34 @@
     [answerBarView setAnswerOptions:first secondOption:second thirdOption:third fourthOption:fourth];
 }
 
+-(void)addPoints
+{
+    if (numWrongChoices == 0) {
+        score+=10;
+    } else if (numWrongChoices == 1){
+        score += 5;
+    } else if (numWrongChoices == 2) {
+        score += 1;
+    }
+    
+    [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
+}
+
 - (void)update:(ccTime)deltaTime
 {
     if (characterView.answerHit == answerBarView.correctAnswer){
         [answerBarView answerSelected];
         [characterView stopCharacter];
-        //[NSTimer scheduledTimerWithTimeInterval:2 target:characterView selector:@selector(resetCharacter:) userInfo:nil repeats:NO];
         [NSTimer scheduledTimerWithTimeInterval:2 target:self
                                 selector:@selector(loadNewProblem) userInfo:nil repeats:NO];
-        //[self loadNewProblem];
+        [self addPoints];
+        numWrongChoices = 0;
         characterView.answerHit = -1;
     }
     else if (characterView.answerHit != -1){
         [answerBarView wrongAnswerSelected: characterView.answerHit];
         characterView.answerHit = -1;
+        numWrongChoices += 1;
     }
     // We'll always have 4 possible answers/platforms
     NSArray* platforms = [NSArray arrayWithObjects:

@@ -137,6 +137,7 @@
 		AB492D9C1706425400CA495A /* MathProblemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB492D9B1706425400CA495A /* MathProblemView.m */; };
 		AB492DA51706646800CA495A /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = AB492DA41706646800CA495A /* character.png */; };
 		AB492DAD17066FFC00CA495A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = AB492DAC17066FFC00CA495A /* background.png */; };
+		ABDB8B9A1712177900F23A61 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDB8B991712177900F23A61 /* MainMenu.m */; };
 		D895639C170D1A1000BB65FB /* platforms.png in Resources */ = {isa = PBXBuildFile; fileRef = D895639B170D1A1000BB65FB /* platforms.png */; };
 		D8A8BFA41708D99000997C86 /* problems.txt in Resources */ = {isa = PBXBuildFile; fileRef = D8A8BFA31708D99000997C86 /* problems.txt */; };
 		D8A8BFA71708E3ED00997C86 /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A8BFA61708E3ED00997C86 /* ProblemGenerator.m */; };
@@ -411,6 +412,8 @@
 		AB492D9B1706425400CA495A /* MathProblemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathProblemView.m; sourceTree = "<group>"; };
 		AB492DA41706646800CA495A /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
 		AB492DAC17066FFC00CA495A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/background.png; sourceTree = "<group>"; };
+		ABDB8B981712177900F23A61 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
+		ABDB8B991712177900F23A61 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
 		D895639B170D1A1000BB65FB /* platforms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platforms.png; sourceTree = "<group>"; };
 		D8A8BFA31708D99000997C86 /* problems.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = problems.txt; path = Resources/problems.txt; sourceTree = "<group>"; };
 		D8A8BFA51708E3ED00997C86 /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 			children = (
 				AB492D7D17063CD500CA495A /* AppDelegate.h */,
 				AB492D7E17063CD500CA495A /* AppDelegate.m */,
+				ABDB8B981712177900F23A61 /* MainMenu.h */,
+				ABDB8B991712177900F23A61 /* MainMenu.m */,
 				AB492D941706420E00CA495A /* MainController.h */,
 				AB492D951706420E00CA495A /* MainController.m */,
 				AB492D911706418D00CA495A /* AnswerBarView.h */,
@@ -1043,6 +1048,7 @@
 				AB492D991706423700CA495A /* CharacterView.m in Sources */,
 				AB492D9C1706425400CA495A /* MathProblemView.m in Sources */,
 				D8A8BFA71708E3ED00997C86 /* ProblemGenerator.m in Sources */,
+				ABDB8B9A1712177900F23A61 /* MainMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

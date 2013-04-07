@@ -21,14 +21,13 @@
 }
 -(id) init;
 -(int) answerSelected:(NSArray*) platforms;
--(void)update:(ccTime)deltaTime withPlatforms: (NSArray*)platforms andAnswer:
-        (int)correctAnswer;
+-(void)update:(ccTime)deltaTime withPlatforms: (NSArray*)platforms andAnswer:(int)correctAnswer;
 -(void) dealloc;
 -(void) resetCharacter;
 -(void) stopCharacter;
 -(void) jump;
--(void)accelerometer:(UIAccelerometer*) accelerometer
-       didAccelerate:(UIAcceleration *) acceleration;
+-(void)accelerometer:(UIAccelerometer*) accelerometer didAccelerate:(UIAcceleration *) acceleration;
+
 
 @property int answerHit;
 

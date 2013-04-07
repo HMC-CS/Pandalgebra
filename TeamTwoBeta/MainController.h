@@ -20,9 +20,14 @@
     AnswerBarView *answerBarView;
     MathProblemView *mathProblemView;
     ProblemGenerator *problemGenerator;
+    int score;
+    int numWrongChoices;
+    CCLabelTTF *scoreLabel;
+    CCLabelTTF *scoreWordLabel;
 }
 
 -(void) loadNewProblem;
+-(void) addPoints;
 -(void)update:(ccTime)deltaTime;
 +(CCScene*)scene;
 

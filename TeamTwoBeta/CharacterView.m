@@ -157,7 +157,7 @@
     // We add in the absolute value of the x velocity
     // to account for the tilting, so we follow the
     // laws of motion.
-    character_vel.y = 600.0f + fabsf(character_vel.x);
+    character_vel.y = 630.0f + fabsf(character_vel.x);
 }
 
 -(void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration *)acceleration
