@@ -66,11 +66,11 @@
 -(void)addPoints
 {
     if (numWrongChoices == 0) {
-        score+=10;
+        score+=30;
     } else if (numWrongChoices == 1){
-        score += 5;
+        score += 20;
     } else if (numWrongChoices == 2) {
-        score += 1;
+        score += 10;
     }
     
     [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
