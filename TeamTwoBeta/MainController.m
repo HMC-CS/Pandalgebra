@@ -65,6 +65,7 @@
     NSString *fourth = [questionAndAnswers objectAtIndex:4];
     
     [answerBarView setAnswerOptions:first secondOption:second thirdOption:third fourthOption:fourth];
+    [questionAndAnswers release];
 }
 
 -(void)addPoints
