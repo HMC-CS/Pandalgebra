@@ -76,8 +76,11 @@
 {
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
     CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 0, 100, 40)];
-    [batchNode removeChildByTag:_correctAnswer cleanup:TRUE];
-    [batchNode addChild:platform z:3 tag:_correctAnswer];
+    for(int i = 0; i < 4; i++)
+    {
+        [batchNode removeChildByTag:i cleanup:TRUE];
+        [batchNode addChild:platform z:3 tag:i];
+    }
     [self resetPlatforms];
 }
 

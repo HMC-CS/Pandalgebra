@@ -139,6 +139,8 @@
     
     character_acc.x = 0;
     character_acc.y = -550.f;  //Start with negative y acceleration so character falls
+    
+    stopped = FALSE;
 }
 
 -(void) stopCharacter
@@ -148,6 +150,8 @@
     
     character_acc.x = 0;
     character_acc.y = 0;
+    
+    stopped = TRUE;
 }
 
 // Controls how high the character jumps.
@@ -174,7 +178,9 @@
     // Because we don't care what happens when we tilt
     // vertically, we only change the x velocity
     // when we tilt.
-    character_vel.x = character_vel.x * accel_filter + accelerate * (1.0f - accel_filter) * 500.0f;
+    if(!stopped){
+        character_vel.x = character_vel.x * accel_filter + accelerate * (1.0f - accel_filter) * 500.0f;
+    }
 }
 
 @end

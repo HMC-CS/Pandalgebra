@@ -17,6 +17,7 @@
     ccVertex2F character_acc;
     int NUM_ANSWERS;
     int _answerHit;
+    BOOL stopped;
     
 }
 -(id) init;
