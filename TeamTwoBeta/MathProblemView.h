@@ -11,10 +11,13 @@
 
 @interface MathProblemView : CCLayer
 {
+    NSString* _problemString;
     CCLabelTTF* mathProblem;
 }
 
 -(void) setMathProblem: (NSString*) problem;
--(void)update:(ccTime)deltaTime;
+-(void) update:(ccTime)deltaTime;
+
+@property NSString* problemString;
 
 @end

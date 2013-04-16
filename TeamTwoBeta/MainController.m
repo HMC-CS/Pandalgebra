@@ -51,6 +51,10 @@
     // Get the questions and answers from the problem generator.
     NSMutableArray *questionAndAnswers = [ProblemGenerator loadProblem];
     
+    // Make sure that this is a different problem from the previous one.
+    while ([mathProblemView.problemString isEqualToString: questionAndAnswers[0]])
+        questionAndAnswers = [ProblemGenerator loadProblem];
+    
     // Set the math problem.
     [mathProblemView setMathProblem:[questionAndAnswers objectAtIndex:0]];
     

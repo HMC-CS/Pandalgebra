@@ -10,6 +10,7 @@
 #import "MathProblemView.h"
 
 @implementation MathProblemView
+@synthesize problemString = _problemString;
 - (id)init
 {
     if ((self = [super init])) {
@@ -22,7 +23,7 @@
         
         // Initialize and add Math Problem to Screen/View
         CCLabelTTF* label = [CCLabelTTF labelWithString: @"" fontName:@"Arial" fontSize:50];
-        //label.position = ccp(500, 600);
+
         [self addChild:label z:1 tag:1];
     }
     
@@ -33,10 +34,11 @@
 
 -(void) setMathProblem: (NSString*) problem
 {
+    _problemString = problem;
     CCLabelTTF* label = [CCLabelTTF labelWithString: problem fontName:@"Arial" fontSize:50];
     label.position = ccp(500, 600);
     mathProblem = label;
-    //CCNode* child = [self getChildByTag:1];
+
     [self removeChildByTag:1 cleanup:TRUE];
     [self addChild:label z:1 tag:1];
 }
