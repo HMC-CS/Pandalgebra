@@ -34,6 +34,9 @@
 	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
 
 	director_.wantsFullScreenLayout = YES;
+    
+    // avoid sleeping when this application is running
+    application.idleTimerDisabled = YES;
 
 	// set FPS at 60
 	[director_ setAnimationInterval:1.0/60];
