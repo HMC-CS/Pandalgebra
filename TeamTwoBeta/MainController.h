@@ -12,7 +12,7 @@
 #import "AnswerBarView.h"
 #import "MathProblemView.h"
 #import "ProblemGenerator.h"
-
+#import "PauseMenu.h"
 
 @interface MainController : CCScene
 {

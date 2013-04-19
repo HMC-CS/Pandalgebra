@@ -100,6 +100,14 @@
         character_pos.y = 0;
     }
     
+    // Making sure the character doesn't fly through the
+    // top of the screen.
+    if(character_pos.y > 700)
+    {
+        character_vel.y = 0;
+        character_pos.y = 700;
+    }
+    
     if(character_vel.y > -18.0 && character_vel.y < 18.0 && character_pos.y < 10.0) {
         [self jump];
     }
@@ -108,12 +116,7 @@
     if (character_vel.y < 0.0) {
         int chosenAnswer = [self answerSelected: platforms];
         _answerHit = chosenAnswer;
-//        if (chosenAnswer == correctAnswer) {
-//            NSLog(@"Character landed on correct answer!");
-//            NSLog(@"correct answer index correctAnswer =%d", correctAnswer);
-//            _answerHit = TRUE;
-//        }
-        if (chosenAnswer != -1) {
+       if (chosenAnswer != -1) {
             [self jump];
         }
     }
@@ -161,7 +164,7 @@
     // We add in the absolute value of the x velocity
     // to account for the tilting, so we follow the
     // laws of motion.
-    character_vel.y = 630.0f + fabsf(character_vel.x);
+    character_vel.y = 630.0f;
 }
 
 -(void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration *)acceleration

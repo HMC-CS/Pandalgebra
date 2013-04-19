@@ -27,6 +27,15 @@
         
         [self loadNewProblem];
         
+        CCMenuItem *Pause = [CCMenuItemImage itemFromNormalImage:@"pausebutton.png"
+                                                   selectedImage: @"pausebutton.png"
+                                                          target:self selector:@selector(pause:)];
+        CCMenu *PauseButton = [CCMenu menuWithItems: Pause, nil];
+        
+        PauseButton.position = ccp(25, 295);
+        
+        [self addChild:PauseButton z:1000];
+        
         // Scoring Properties Initalized Here
         numWrongChoices = 0;
         
@@ -106,6 +115,11 @@
                           nil];
     
     [characterView update: deltaTime withPlatforms:platforms andAnswer:answerBarView.correctAnswer];
+}
+
+-(void) pause: (id) sender {
+    
+	[[CCDirector sharedDirector] pushScene:[PauseScene node]];
 }
 
 + (CCScene*)scene

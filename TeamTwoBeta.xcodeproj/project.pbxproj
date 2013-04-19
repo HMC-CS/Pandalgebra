@@ -139,6 +139,8 @@
 		ABD9F4DF171BCB0600B7303F /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = ABD9F4DE171BCB0600B7303F /* character.png */; };
 		ABD9F4E1171BCDC800B7303F /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = ABD9F4E0171BCDC800B7303F /* background.png */; };
 		ABDB8B9A1712177900F23A61 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDB8B991712177900F23A61 /* MainMenu.m */; };
+		D83B936517211A6E008FB76E /* PauseMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D83B936417211A6E008FB76E /* PauseMenu.m */; };
+		D83B9367172120BC008FB76E /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D83B9366172120BC008FB76E /* pausebutton.png */; };
 		D8A8BFA41708D99000997C86 /* problems.txt in Resources */ = {isa = PBXBuildFile; fileRef = D8A8BFA31708D99000997C86 /* problems.txt */; };
 		D8A8BFA71708E3ED00997C86 /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A8BFA61708E3ED00997C86 /* ProblemGenerator.m */; };
 /* End PBXBuildFile section */
@@ -415,6 +417,9 @@
 		ABD9F4E0171BCDC800B7303F /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		ABDB8B981712177900F23A61 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
 		ABDB8B991712177900F23A61 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
+		D83B936317211A6E008FB76E /* PauseMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseMenu.h; sourceTree = "<group>"; };
+		D83B936417211A6E008FB76E /* PauseMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseMenu.m; sourceTree = "<group>"; };
+		D83B9366172120BC008FB76E /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pausebutton.png; path = Resources/pausebutton.png; sourceTree = "<group>"; };
 		D8A8BFA31708D99000997C86 /* problems.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = problems.txt; path = Resources/problems.txt; sourceTree = "<group>"; };
 		D8A8BFA51708E3ED00997C86 /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
 		D8A8BFA61708E3ED00997C86 /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
@@ -480,6 +485,8 @@
 				AB492D7E17063CD500CA495A /* AppDelegate.m */,
 				ABDB8B981712177900F23A61 /* MainMenu.h */,
 				ABDB8B991712177900F23A61 /* MainMenu.m */,
+				D83B936317211A6E008FB76E /* PauseMenu.h */,
+				D83B936417211A6E008FB76E /* PauseMenu.m */,
 				AB492D941706420E00CA495A /* MainController.h */,
 				AB492D951706420E00CA495A /* MainController.m */,
 				AB492D911706418D00CA495A /* AnswerBarView.h */,
@@ -500,6 +507,7 @@
 		AB492C0617063CD300CA495A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D83B9366172120BC008FB76E /* pausebutton.png */,
 				D8A8BFA31708D99000997C86 /* problems.txt */,
 				AB492C0717063CD300CA495A /* Default.png */,
 				AB492C0917063CD300CA495A /* Default-Landscape~ipad.png */,
@@ -931,6 +939,7 @@
 				ABD9F4DD171BCAF600B7303F /* platforms.png in Resources */,
 				ABD9F4DF171BCB0600B7303F /* character.png in Resources */,
 				ABD9F4E1171BCDC800B7303F /* background.png in Resources */,
+				D83B9367172120BC008FB76E /* pausebutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1049,6 +1058,7 @@
 				AB492D9C1706425400CA495A /* MathProblemView.m in Sources */,
 				D8A8BFA71708E3ED00997C86 /* ProblemGenerator.m in Sources */,
 				ABDB8B9A1712177900F23A61 /* MainMenu.m in Sources */,
+				D83B936517211A6E008FB76E /* PauseMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
