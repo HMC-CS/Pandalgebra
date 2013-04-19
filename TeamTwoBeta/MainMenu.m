@@ -43,11 +43,15 @@
 			
 			[[CCDirector sharedDirector] replaceScene:[MainController node]];
 		}];
+        
+        CCMenuItem *quit = [CCMenuItemFont itemWithString:@"Quit" block:^(id sender) {
+			exit(0);
+		}];
             
-		CCMenu *menu = [CCMenu menuWithItems:playGame, nil];
+		CCMenu *menu = [CCMenu menuWithItems:playGame, quit, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
-		[menu setPosition:ccp( size.width/2 + 125, size.height/2 - 50)];
+		[menu setPosition:ccp( size.width/2 + 125, size.height/2 - 100)];
         
 
 		
