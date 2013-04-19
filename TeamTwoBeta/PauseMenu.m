@@ -9,29 +9,38 @@
 #import "PauseMenu.h"
 #import "MainMenu.h"
 
-@implementation PauseScene
+@implementation PauseMenu
 
 -(id) init
 {
 	if(self = [super init]){
         
-		CCLabelTTF* label = [CCLabelTTF labelWithString:@"Paused" fontName:@"MarkerFelt" fontSize:60];
+        // Ask director for the window size
+		CGSize size = [[CCDirector sharedDirector] winSize];
         
-        label.position = ccp(240, 160);
+        // Create Menu Background
+        CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+        background.position = ccp( size.width/2 , size.height/2 );
+        [self addChild:background];
         
-        [self addChild: label];
+        CCLabelTTF *label = [CCLabelTTF labelWithString:@"Paused" fontName:@"Marker Felt" fontSize:60];
+        //label.position = ccp(size.width/2, size.height/2 + 100);
+        label.position = ccp(512, 512);
+        
+        [self addChild:label];
         
         [CCMenuItemFont setFontName:@"Marker Felt"];
         [CCMenuItemFont setFontSize:35];
         
-        CCMenuItem *Resume = [CCMenuItemFont itemFromString:@"Resume" target:self selector:@selector(resume:)];
+        CCMenuItem *resume = [CCMenuItemFont itemWithString:@"Resume" target:self selector:@selector(resume:)];
         
-        CCMenuItem *Quit = [CCMenuItemFont itemFromString:@"Quit" target:self selector:@selector(GoToMainMenu:)];
+        CCMenuItem *mainMenu = [CCMenuItemFont itemWithString:@"Main Menu" target:self selector:@selector(GoToMainMenu:)];
         
-        CCMenu *menu = [CCMenu menuWithItems: Resume, Quit, nil];
-        menu.position = ccp(240, 131.67f);
+        CCMenu *menu = [CCMenu menuWithItems: resume, mainMenu, nil];
         
-        [menu alignItemsVerticallyWithPadding:12.5f];
+		[menu alignItemsVerticallyWithPadding:20];
+		//[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
+        [menu setPosition:ccp(512, 412)];
         
         [self addChild:menu];
     }
@@ -47,8 +56,7 @@
     
     [[CCDirector sharedDirector] sendCleanupToScene];
     [[CCDirector sharedDirector] popScene];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[MainMenu node]]
-     ];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[MainMenu node]]];
 }
 
 +(id) scene {
@@ -56,7 +64,7 @@
 	CCScene *scene = [CCScene node];
     
 	// 'layer' is an autorelease object.
-	PauseScene *layer = [PauseScene node];
+	PauseMenu *layer = [PauseMenu node];
     
 	// add layer as a child to scene
 	[scene addChild: layer];

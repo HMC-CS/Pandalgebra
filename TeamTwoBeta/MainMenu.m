@@ -25,16 +25,17 @@
         
         // Create Menu Background
         CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
-        background.position = ccp( size.width/2 + 128, size.height/2 - 128);
+        //background.position = ccp( size.width/2 + 128, size.height/2 - 128);
+        background.position = ccp(512, 384);
         [self addChild:background];
         
         
         CCLabelTTF *title = [CCLabelTTF labelWithString:@"PANDALGEBRA" fontName:@"Marker Felt" fontSize:64];
-        title.position = ccp(size.width /2  + 125, size.height/2);
+        //title.position = ccp(size.width /2  + 125, size.height/2);
+        title.position = ccp(512, 512);
         [self addChild:title];
         
         
-		
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:28];
 		
@@ -52,9 +53,8 @@
 		CCMenu *menu = [CCMenu menuWithItems:playGame, quit, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
-		[menu setPosition:ccp( size.width/2 + 125, size.height/2 - 100)];
-        
-
+		//[menu setPosition:ccp( size.width/2 + 125, size.height/2 - 100)];
+        [menu setPosition:ccp(512, 412)];
 		
 		// Add the menu to the layer
 		[self addChild:menu];
@@ -75,11 +75,6 @@
     MainMenu *layer = [MainMenu node];
     [menuScene addChild:layer];
     return menuScene;
-}
-
--(void) startGame
-{
-    
 }
 
 @end

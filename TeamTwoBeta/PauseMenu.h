@@ -9,7 +9,7 @@
 #import "CCLayer.h"
 #import "cocos2d.h"
 
-@interface PauseScene : CCLayer {
+@interface PauseMenu : CCLayer {
     
 }
 
