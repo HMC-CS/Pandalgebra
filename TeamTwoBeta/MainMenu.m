@@ -38,16 +38,17 @@
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:28];
 		
-		// Achievement Menu Item using blocks
+		// Menu items for playing the game and exiting the game
 		CCMenuItem *playGame = [CCMenuItemFont itemWithString:@"Play Game" block:^(id sender) {
 			
 			[[CCDirector sharedDirector] replaceScene:[MainController node]];
 		}];
         
         CCMenuItem *quit = [CCMenuItemFont itemWithString:@"Quit" block:^(id sender) {
+
 			exit(0);
 		}];
-            
+
 		CCMenu *menu = [CCMenu menuWithItems:playGame, quit, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];

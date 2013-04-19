@@ -21,7 +21,7 @@
     
     // Groups of 5 because one line of question
     // and 4 lines of answers.
-    int questionChoice = (arc4random()%9)*5;
+    int questionChoice = (arc4random()%55)*5;
     
     // Create the button objects
     for (int i = 0; i < 5; i++){
