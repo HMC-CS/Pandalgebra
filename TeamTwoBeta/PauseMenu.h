@@ -13,5 +13,9 @@
     
 }
 
+-(void) resume: (id) sender;
+-(void) GoToMainMenu: (id) sender;
+-(void) GoToHighScoreMenu: (id) sender;
 +(id) scene;
+
 @end
