@@ -11,6 +11,7 @@
 #import "HighScoreMenu.h"
 
 @implementation PauseScene
+@synthesize score = _score;
 
 -(id) init
 {
@@ -59,8 +60,10 @@
     
     [[CCDirector sharedDirector] sendCleanupToScene];
     [[CCDirector sharedDirector] popScene];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[HighScoreScene node]]
-     ];
+    HighScoreScene *highScoreScene = [HighScoreScene node];
+    highScoreScene.score = _score;
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
+                                                scene:(CCScene*)highScoreScene]];
 }
 
 +(id) scene {

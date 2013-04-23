@@ -25,6 +25,7 @@
     int numWrongChoices;
     CCLabelTTF *scoreLabel;
     CCLabelTTF *scoreWordLabel;
+    NSArray* platforms;
 }
 
 -(void) loadNewProblem;

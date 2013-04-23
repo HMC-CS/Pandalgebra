@@ -47,6 +47,7 @@
         scoreWordLabel = [CCLabelTTF labelWithString:@"SCORE:" fontName:@"Arial" fontSize:24];
         scoreWordLabel.position = ccp(60, 20);
         [self addChild:scoreWordLabel z:1];
+        
     }
     
     return self;
@@ -141,20 +142,22 @@
         characterView.answerHit = -1;
         numWrongChoices += 1;
     }
-    // We'll always have 4 possible answers/platforms
-    NSArray* platforms = [NSArray arrayWithObjects:
-                          [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:0]],
-                          [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:1]],
-                          [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:2]],
-                          [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:3]],
-                          nil];
     
+    // We'll always have 4 possible answers/platforms
+    platforms = [NSArray arrayWithObjects:
+                 [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:0]],
+                 [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:1]],
+                 [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:2]],
+                 [NSValue valueWithCGPoint:[answerBarView getPlatformPosition:3]],
+                 nil];
+
     [characterView update: deltaTime withPlatforms:platforms andAnswer:answerBarView.correctAnswer];
 }
 
 -(void) pause: (id) sender {
-    
-	[[CCDirector sharedDirector] pushScene:[PauseScene node]];
+    PauseScene *pauseScene = [PauseScene node];
+    pauseScene.score = score;
+	[[CCDirector sharedDirector] pushScene:(CCScene*)pauseScene];
 }
 
 + (CCScene*)scene

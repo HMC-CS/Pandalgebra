@@ -37,8 +37,8 @@
 		[CCMenuItemFont setFontSize:28];
 		
 		// Menu items for playing the game and exiting the game
-		CCMenuItem *playGame = [CCMenuItemFont itemWithString:@"Play Game" block:^(id sender) {
-			
+		CCMenuItem *playGame = [CCMenuItemFont itemWithString:@"Play Game" block:
+        ^(id sender) {
 			[[CCDirector sharedDirector] replaceScene:[MainController node]];
 		}];
         

@@ -10,8 +10,12 @@
 #import "cocos2d.h"
 
 @interface HighScoreScene : CCLayer
+{
+    int _score;
+}
 
 -(void) GoToMainMenu: (id) sender;
 +(id) scene;
 
+@property int score;
 @end

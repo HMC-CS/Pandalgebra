@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 
 @interface PauseScene : CCLayer {
-    
+    int _score;
 }
 
 -(void) resume: (id) sender;
@@ -18,4 +18,5 @@
 -(void) GoToHighScoreMenu: (id) sender;
 +(id) scene;
 
+@property int score;
 @end

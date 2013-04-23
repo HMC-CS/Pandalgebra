@@ -17,29 +17,29 @@
 #import "AppDelegate.h"
 
 @implementation HighScoreScene
+@synthesize score = _score;
+
 -(id)init
 {
     if (self = [super init]) {
         
-        // ask director for the window size
+        // Ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
         
-        // Create Menu Background
+        // Create menu nackground
         CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
         background.position = ccp( size.width/2 + 128, size.height/2 - 128);
         [self addChild:background];
         
-        
+        // Create menu title
         CCLabelTTF *title = [CCLabelTTF labelWithString:@"High Scores" fontName:@"Marker Felt" fontSize:64];
         title.position = ccp(size.width /2  + 125, size.height/2);
         [self addChild:title];
-        
-        
 		
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:28];
 		
-		// Menu items returning to the main menu
+		// Menu item for returning to the main menu
 		CCMenuItem *Quit = [CCMenuItemFont itemFromString:@"Quit" target:self selector:@selector(GoToMainMenu:)];
         
 		CCMenu *menu = [CCMenu menuWithItems:Quit, nil];
