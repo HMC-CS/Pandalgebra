@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E5CA6601724A6A40049BB92 /* HighScoreMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */; };
 		AB492BF417063CD300CA495A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF317063CD300CA495A /* QuartzCore.framework */; };
 		AB492BF617063CD300CA495A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF517063CD300CA495A /* OpenGLES.framework */; };
 		AB492BF817063CD300CA495A /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF717063CD300CA495A /* OpenAL.framework */; };
@@ -146,6 +147,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E5CA65E1724A6A30049BB92 /* HighScoreMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreMenu.h; sourceTree = "<group>"; };
+		4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreMenu.m; sourceTree = "<group>"; };
 		AB492BF017063CD300CA495A /* TeamTwoBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTwoBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB492BF317063CD300CA495A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AB492BF517063CD300CA495A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -485,6 +488,8 @@
 				AB492D7E17063CD500CA495A /* AppDelegate.m */,
 				ABDB8B981712177900F23A61 /* MainMenu.h */,
 				ABDB8B991712177900F23A61 /* MainMenu.m */,
+				4E5CA65E1724A6A30049BB92 /* HighScoreMenu.h */,
+				4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */,
 				D83B936317211A6E008FB76E /* PauseMenu.h */,
 				D83B936417211A6E008FB76E /* PauseMenu.m */,
 				AB492D941706420E00CA495A /* MainController.h */,
@@ -1059,6 +1064,7 @@
 				D8A8BFA71708E3ED00997C86 /* ProblemGenerator.m in Sources */,
 				ABDB8B9A1712177900F23A61 /* MainMenu.m in Sources */,
 				D83B936517211A6E008FB76E /* PauseMenu.m in Sources */,
+				4E5CA6601724A6A40049BB92 /* HighScoreMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

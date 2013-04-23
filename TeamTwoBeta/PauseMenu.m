@@ -8,6 +8,7 @@
 
 #import "PauseMenu.h"
 #import "MainMenu.h"
+#import "HighScoreMenu.h"
 
 @implementation PauseScene
 
@@ -26,9 +27,12 @@
         
         CCMenuItem *Resume = [CCMenuItemFont itemFromString:@"Resume" target:self selector:@selector(resume:)];
         
+        CCMenuItem *Highscore = [CCMenuItemFont itemFromString:@"Save high score" target:self
+            selector:@selector(GoToHighScoreMenu:)];
+        
         CCMenuItem *Quit = [CCMenuItemFont itemFromString:@"Quit" target:self selector:@selector(GoToMainMenu:)];
         
-        CCMenu *menu = [CCMenu menuWithItems: Resume, Quit, nil];
+        CCMenu *menu = [CCMenu menuWithItems: Resume, Highscore, Quit, nil];
         menu.position = ccp(240, 131.67f);
         
         [menu alignItemsVerticallyWithPadding:12.5f];
@@ -48,6 +52,14 @@
     [[CCDirector sharedDirector] sendCleanupToScene];
     [[CCDirector sharedDirector] popScene];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[MainMenu node]]
+     ];
+}
+
+-(void) GoToHighScoreMenu: (id) sender {
+    
+    [[CCDirector sharedDirector] sendCleanupToScene];
+    [[CCDirector sharedDirector] popScene];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[HighScoreScene node]]
      ];
 }
 

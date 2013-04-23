@@ -133,7 +133,7 @@
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:0];
 	CCSprite *character = (CCSprite*)[batchNode getChildByTag:0];
     
-    character_pos.x = 160;
+    character_pos.x = 500;
     character_pos.y = 160;
     character.position = character_pos;
     

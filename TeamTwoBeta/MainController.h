@@ -13,6 +13,7 @@
 #import "MathProblemView.h"
 #import "ProblemGenerator.h"
 #import "PauseMenu.h"
+#import "HighScoreMenu.h"
 
 @interface MainController : CCScene
 {
