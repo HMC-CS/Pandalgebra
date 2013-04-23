@@ -32,8 +32,6 @@
         CCLabelTTF *title = [CCLabelTTF labelWithString:@"PANDALGEBRA" fontName:@"Marker Felt" fontSize:64];
         title.position = ccp(size.width /2  + 125, size.height/2);
         [self addChild:title];
-        
-        
 		
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:28];
@@ -53,8 +51,6 @@
 		
 		[menu alignItemsVerticallyWithPadding:20];
 		[menu setPosition:ccp( size.width/2 + 125, size.height/2 - 100)];
-        
-
 		
 		// Add the menu to the layer
 		[self addChild:menu];
@@ -69,7 +65,7 @@
     [super dealloc];
 }
 
-+(id) menuScene
++(id) scene
 {
     CCScene *menuScene = [CCScene node];
     MainMenu *layer = [MainMenu node];

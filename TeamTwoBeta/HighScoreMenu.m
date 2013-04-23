@@ -58,7 +58,7 @@
 -(void) GoToMainMenu: (id) sender {
     
     [[CCDirector sharedDirector] sendCleanupToScene];
-    [[CCDirector sharedDirector] popScene];
+    //[[CCDirector sharedDirector] popScene];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[MainMenu node]]];
 }
 
