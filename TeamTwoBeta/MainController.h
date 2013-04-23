@@ -28,6 +28,8 @@
 
 -(void) loadNewProblem;
 -(void) addPoints;
+-(void) displayScore;
+-(void) removeLabel:(id) sender;
 -(void)update:(ccTime)deltaTime;
 +(CCScene*)scene;
 

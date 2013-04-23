@@ -81,7 +81,7 @@
 {
     if (numWrongChoices == 0) {
         score+=30;
-    } else if (numWrongChoices == 1){
+    } else if (numWrongChoices == 1) {
         score += 20;
     } else if (numWrongChoices == 2) {
         score += 10;
@@ -90,6 +90,40 @@
     [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
 }
 
+-(void) displayScore
+{
+    CGSize screenSize = [[CCDirector sharedDirector] winSize];
+    NSString *message = @"+0";
+    
+    if (numWrongChoices == 0) {
+        message = @"+30";
+    } else if (numWrongChoices == 1) {
+        message = @"+20";
+    } else if (numWrongChoices == 2) {
+        message = @"+10";
+    }
+    
+    CCLabelTTF *label = [CCLabelTTF labelWithString:message fontName:@"Arial" fontSize:100];
+    
+    [self addChild:label];
+    [label setPosition:ccp(screenSize.width/2, screenSize.height/1.5)];
+    
+    id scaleTo = [CCScaleTo actionWithDuration:0.4f scale:1.3f];
+    id scaleBack = [CCScaleTo actionWithDuration:0.4f scale:0.1];
+    id seq = [CCSequence actions:scaleTo, scaleBack, [CCCallFuncN
+                                                      actionWithTarget:self  selector:@selector(removeLabel:)], nil];
+    [label runAction:seq];
+    
+}
+
+-(void) removeLabel: (id) sender
+{
+    [self removeChild:sender cleanup:YES];
+    
+}
+
+
+
 - (void)update:(ccTime)deltaTime
 {
     if (characterView.answerHit == answerBarView.correctAnswer){
@@ -97,6 +131,7 @@
         [characterView stopCharacter];
         [NSTimer scheduledTimerWithTimeInterval:2 target:self
                                 selector:@selector(loadNewProblem) userInfo:nil repeats:NO];
+        [self displayScore];
         [self addPoints];
         numWrongChoices = 0;
         characterView.answerHit = -1;
