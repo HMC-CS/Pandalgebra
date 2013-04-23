@@ -8,8 +8,10 @@
 
 #import "PauseMenu.h"
 #import "MainMenu.h"
+#import "HighScoreMenu.h"
 
 @implementation PauseMenu
+@synthesize score = _score;
 
 -(id) init
 {
@@ -36,7 +38,14 @@
         
         CCMenuItem *mainMenu = [CCMenuItemFont itemWithString:@"Main Menu" target:self selector:@selector(GoToMainMenu:)];
         
-        CCMenu *menu = [CCMenu menuWithItems: resume, mainMenu, nil];
+        CCMenuItem *Highscore = [CCMenuItemFont itemFromString:@"Save high score" target:self
+            selector:@selector(GoToHighScoreMenu:)];
+        
+        CCMenuItem *Quit = [CCMenuItemFont itemFromString:@"Quit" target:self selector:@selector(GoToMainMenu:)];
+        
+        CCMenu *menu = [CCMenu menuWithItems: resume, Highscore, Quit, nil];
+        menu.position = ccp(240, 131.67f);
+
         
 		[menu alignItemsVerticallyWithPadding:20];
 		//[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
@@ -57,6 +66,16 @@
     [[CCDirector sharedDirector] sendCleanupToScene];
     [[CCDirector sharedDirector] popScene];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[MainMenu node]]];
+}
+
+-(void) GoToHighScoreMenu: (id) sender {
+    
+    [[CCDirector sharedDirector] sendCleanupToScene];
+    [[CCDirector sharedDirector] popScene];
+    HighScoreScene *highScoreScene = [HighScoreScene node];
+    highScoreScene.score = _score;
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
+                                                scene:(CCScene*)highScoreScene]];
 }
 
 +(id) scene {

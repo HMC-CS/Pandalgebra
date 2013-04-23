@@ -13,6 +13,7 @@
 #import "MathProblemView.h"
 #import "ProblemGenerator.h"
 #import "PauseMenu.h"
+#import "HighScoreMenu.h"
 
 @interface MainController : CCScene
 {
@@ -24,10 +25,13 @@
     int numWrongChoices;
     CCLabelTTF *scoreLabel;
     CCLabelTTF *scoreWordLabel;
+    NSArray* platforms;
 }
 
 -(void) loadNewProblem;
 -(void) addPoints;
+-(void) displayScore;
+-(void) removeLabel:(id) sender;
 -(void)update:(ccTime)deltaTime;
 +(CCScene*)scene;
 

@@ -6,15 +6,16 @@
 //  Copyright Ari Schlesinger, Abby Gregory, Izzy Funke, and Miranda Parker 2013. All rights reserved.
 //
 
-#import  <GameKit/GameKit.h>
+#import "CCLayer.h"
 #import "cocos2d.h"
-#import "MainController.h"
 
+@interface HighScoreScene : CCLayer
+{
+    int _score;
+}
 
-@interface MainMenu : CCLayer 
-
-+(id) menuScene;
+-(void) GoToMainMenu: (id) sender;
 +(id) scene;
--(void) startGame;
 
+@property int score;
 @end

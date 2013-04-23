@@ -34,14 +34,13 @@
         //title.position = ccp(size.width /2  + 125, size.height/2);
         title.position = ccp(512, 512);
         [self addChild:title];
-        
-        
+
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:28];
 		
 		// Menu items for playing the game and exiting the game
-		CCMenuItem *playGame = [CCMenuItemFont itemWithString:@"Play Game" block:^(id sender) {
-			
+		CCMenuItem *playGame = [CCMenuItemFont itemWithString:@"Play Game" block:
+        ^(id sender) {
 			[[CCDirector sharedDirector] replaceScene:[MainController node]];
 		}];
         
@@ -53,7 +52,6 @@
 		CCMenu *menu = [CCMenu menuWithItems:playGame, quit, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
-		//[menu setPosition:ccp( size.width/2 + 125, size.height/2 - 100)];
         [menu setPosition:ccp(512, 412)];
 		
 		// Add the menu to the layer
@@ -69,7 +67,7 @@
     [super dealloc];
 }
 
-+(id) menuScene
++(id) scene
 {
     CCScene *menuScene = [CCScene node];
     MainMenu *layer = [MainMenu node];
