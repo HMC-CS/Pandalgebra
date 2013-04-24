@@ -32,12 +32,10 @@
         [self addChild:label];
         
         [CCMenuItemFont setFontName:@"Marker Felt"];
-        [CCMenuItemFont setFontSize:35];
+        [CCMenuItemFont setFontSize:28];
         
         CCMenuItem *resume = [CCMenuItemFont itemWithString:@"Resume" target:self selector:@selector(resume:)];
-        
-        CCMenuItem *mainMenu = [CCMenuItemFont itemWithString:@"Main Menu" target:self selector:@selector(GoToMainMenu:)];
-        
+                
         CCMenuItem *Highscore = [CCMenuItemFont itemFromString:@"Save high score" target:self
             selector:@selector(GoToHighScoreMenu:)];
         
@@ -49,7 +47,7 @@
         
 		[menu alignItemsVerticallyWithPadding:20];
 		//[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
-        [menu setPosition:ccp(512, 412)];
+        [menu setPosition:ccp(512, 392)];
         
         [self addChild:menu];
     }

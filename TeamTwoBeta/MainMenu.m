@@ -11,6 +11,8 @@
 
 
 #import "MainMenu.h"
+#import "Difficulty.h"
+#import "InstructionsMenu.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -19,9 +21,7 @@
 -(id)init
 {
     if (self = [super init]) {
-        
-        // ask director for the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
+
         
         // Create Menu Background
         CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
@@ -41,18 +41,26 @@
 		// Menu items for playing the game and exiting the game
 		CCMenuItem *playGame = [CCMenuItemFont itemWithString:@"Play Game" block:
         ^(id sender) {
-			[[CCDirector sharedDirector] replaceScene:[MainController node]];
+			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:
+                                                       [Difficulty node]]];
+		}];
+        
+        CCMenuItem *instructions = [CCMenuItemFont itemWithString:@"Instructions" block:^(id sender) {
+            
+			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
+                                                                        scene:[InstructionsMenu node]]];
 		}];
         
         CCMenuItem *quit = [CCMenuItemFont itemWithString:@"Quit" block:^(id sender) {
 
 			exit(0);
+            
 		}];
 
-		CCMenu *menu = [CCMenu menuWithItems:playGame, quit, nil];
+		CCMenu *menu = [CCMenu menuWithItems:playGame, instructions, quit, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
-        [menu setPosition:ccp(512, 412)];
+        [menu setPosition:ccp(512, 392)];
 		
 		// Add the menu to the layer
 		[self addChild:menu];
