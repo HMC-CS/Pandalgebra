@@ -147,6 +147,7 @@
 		D83B936517211A6E008FB76E /* PauseMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D83B936417211A6E008FB76E /* PauseMenu.m */; };
 		D83B9367172120BC008FB76E /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D83B9366172120BC008FB76E /* pausebutton.png */; };
 		D83B936D1729E207008FB76E /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D83B936C1729E207008FB76E /* jump.mp3 */; };
+		D83B93711729EBCE008FB76E /* cartoon_battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D83B93701729EBCE008FB76E /* cartoon_battle.mp3 */; };
 		D8A8BFA41708D99000997C86 /* problems.txt in Resources */ = {isa = PBXBuildFile; fileRef = D8A8BFA31708D99000997C86 /* problems.txt */; };
 		D8A8BFA71708E3ED00997C86 /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A8BFA61708E3ED00997C86 /* ProblemGenerator.m */; };
 /* End PBXBuildFile section */
@@ -435,6 +436,7 @@
 		D83B936417211A6E008FB76E /* PauseMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseMenu.m; sourceTree = "<group>"; };
 		D83B9366172120BC008FB76E /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pausebutton.png; path = Resources/pausebutton.png; sourceTree = "<group>"; };
 		D83B936C1729E207008FB76E /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jump.mp3; path = Resources/jump.mp3; sourceTree = "<group>"; };
+		D83B93701729EBCE008FB76E /* cartoon_battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = cartoon_battle.mp3; path = Resources/cartoon_battle.mp3; sourceTree = "<group>"; };
 		D8A8BFA31708D99000997C86 /* problems.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = problems.txt; path = Resources/problems.txt; sourceTree = "<group>"; };
 		D8A8BFA51708E3ED00997C86 /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
 		D8A8BFA61708E3ED00997C86 /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 		AB492C0617063CD300CA495A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D83B93701729EBCE008FB76E /* cartoon_battle.mp3 */,
 				D83B936C1729E207008FB76E /* jump.mp3 */,
 				4EBC94361728DDF200B5DFA6 /* savedscores.txt */,
 				2C1D8E231727B1EB0016F0F1 /* instructions.txt */,
@@ -967,6 +970,7 @@
 				2C1D8E241727B1EB0016F0F1 /* instructions.txt in Resources */,
 				4EBC94371728DDF200B5DFA6 /* savedscores.txt in Resources */,
 				D83B936D1729E207008FB76E /* jump.mp3 in Resources */,
+				D83B93711729EBCE008FB76E /* cartoon_battle.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

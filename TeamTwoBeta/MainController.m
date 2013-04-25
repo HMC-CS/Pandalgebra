@@ -48,7 +48,6 @@
         scoreWordLabel = [CCLabelTTF labelWithString:@"SCORE:" fontName:@"Arial" fontSize:24];
         scoreWordLabel.position = ccp(60, 20);
         [self addChild:scoreWordLabel z:1];
-        
     }
     
     return self;
