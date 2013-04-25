@@ -1,11 +1,11 @@
 Scoring:
 
-There is a score in the bottom left corner of the screen that is 
-updated throughout the game. Whenever you land on a correct 
+There is a score in the bottom left corner of the screen that 
+is updated throughout the game. Whenever you land on a correct 
 answer on the first try, the score increases by 30 points. Each 
 time you guess an incorrect answer before choosing the correct 
 one, the score only increases by 20 points. When you guess 
 two incorrect answers before the right one, the score increases 
-by 10. If you guess any more than two incorrect answers 
-before the correct one, your score will not increase for that problem. 
+by 10. If you guess any more than two incorrect answers before 
+the correct one, your score will not increase for that problem. 
 Bouncing off the ground does not affect scoring.
