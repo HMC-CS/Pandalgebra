@@ -10,6 +10,14 @@
 		2C1D8E221727ADEF0016F0F1 /* InstructionsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D8E211727ADEF0016F0F1 /* InstructionsMenu.m */; };
 		2C1D8E241727B1EB0016F0F1 /* instructions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D8E231727B1EB0016F0F1 /* instructions.txt */; };
 		2C1D8E271727B4280016F0F1 /* Difficulty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D8E261727B4280016F0F1 /* Difficulty.m */; };
+		2C586D7E1729E605002A9E8D /* InstructionsPage2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C586D7D1729E605002A9E8D /* InstructionsPage2.m */; };
+		2C586D801729E679002A9E8D /* instructionspage2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C586D7F1729E679002A9E8D /* instructionspage2.txt */; };
+		2C586D821729E6AA002A9E8D /* instructionspage3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C586D811729E6AA002A9E8D /* instructionspage3.txt */; };
+		2C586D841729E6CA002A9E8D /* instructionspage4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C586D831729E6CA002A9E8D /* instructionspage4.txt */; };
+		2C586D861729E6E9002A9E8D /* instructionspage5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C586D851729E6E9002A9E8D /* instructionspage5.txt */; };
+		2C586D891729E9FE002A9E8D /* InstructionsPage3.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C586D881729E9FE002A9E8D /* InstructionsPage3.m */; };
+		2C586D8C1729EB90002A9E8D /* InstructionsPage4.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C586D8B1729EB90002A9E8D /* InstructionsPage4.m */; };
+		2C586D8F1729EC5A002A9E8D /* InstructionsPage5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C586D8E1729EC59002A9E8D /* InstructionsPage5.m */; };
 		4E5CA6601724A6A40049BB92 /* HighScoreMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */; };
 		4EBC94371728DDF200B5DFA6 /* savedscores.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC94361728DDF200B5DFA6 /* savedscores.txt */; };
 		AB492BF417063CD300CA495A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF317063CD300CA495A /* QuartzCore.framework */; };
@@ -157,6 +165,18 @@
 		2C1D8E231727B1EB0016F0F1 /* instructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructions.txt; sourceTree = "<group>"; };
 		2C1D8E251727B4270016F0F1 /* Difficulty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Difficulty.h; sourceTree = "<group>"; };
 		2C1D8E261727B4280016F0F1 /* Difficulty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Difficulty.m; sourceTree = "<group>"; };
+		2C586D7C1729E605002A9E8D /* InstructionsPage2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsPage2.h; sourceTree = "<group>"; };
+		2C586D7D1729E605002A9E8D /* InstructionsPage2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsPage2.m; sourceTree = "<group>"; };
+		2C586D7F1729E679002A9E8D /* instructionspage2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionspage2.txt; sourceTree = "<group>"; };
+		2C586D811729E6AA002A9E8D /* instructionspage3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionspage3.txt; sourceTree = "<group>"; };
+		2C586D831729E6CA002A9E8D /* instructionspage4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionspage4.txt; sourceTree = "<group>"; };
+		2C586D851729E6E9002A9E8D /* instructionspage5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = instructionspage5.txt; sourceTree = "<group>"; };
+		2C586D871729E9FE002A9E8D /* InstructionsPage3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsPage3.h; sourceTree = "<group>"; };
+		2C586D881729E9FE002A9E8D /* InstructionsPage3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsPage3.m; sourceTree = "<group>"; };
+		2C586D8A1729EB90002A9E8D /* InstructionsPage4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsPage4.h; sourceTree = "<group>"; };
+		2C586D8B1729EB90002A9E8D /* InstructionsPage4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsPage4.m; sourceTree = "<group>"; };
+		2C586D8D1729EC59002A9E8D /* InstructionsPage5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsPage5.h; sourceTree = "<group>"; };
+		2C586D8E1729EC59002A9E8D /* InstructionsPage5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsPage5.m; sourceTree = "<group>"; };
 		4E5CA65E1724A6A30049BB92 /* HighScoreMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreMenu.h; sourceTree = "<group>"; };
 		4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreMenu.m; sourceTree = "<group>"; };
 		4EBC94361728DDF200B5DFA6 /* savedscores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = savedscores.txt; path = Resources/savedscores.txt; sourceTree = "<group>"; };
@@ -500,6 +520,14 @@
 				AB492D7E17063CD500CA495A /* AppDelegate.m */,
 				2C1D8E201727ADEF0016F0F1 /* InstructionsMenu.h */,
 				2C1D8E211727ADEF0016F0F1 /* InstructionsMenu.m */,
+				2C586D7C1729E605002A9E8D /* InstructionsPage2.h */,
+				2C586D7D1729E605002A9E8D /* InstructionsPage2.m */,
+				2C586D871729E9FE002A9E8D /* InstructionsPage3.h */,
+				2C586D881729E9FE002A9E8D /* InstructionsPage3.m */,
+				2C586D8A1729EB90002A9E8D /* InstructionsPage4.h */,
+				2C586D8B1729EB90002A9E8D /* InstructionsPage4.m */,
+				2C586D8D1729EC59002A9E8D /* InstructionsPage5.h */,
+				2C586D8E1729EC59002A9E8D /* InstructionsPage5.m */,
 				ABDB8B981712177900F23A61 /* MainMenu.h */,
 				ABDB8B991712177900F23A61 /* MainMenu.m */,
 				2C1D8E251727B4270016F0F1 /* Difficulty.h */,
@@ -531,6 +559,10 @@
 				D83B936C1729E207008FB76E /* jump.mp3 */,
 				4EBC94361728DDF200B5DFA6 /* savedscores.txt */,
 				2C1D8E231727B1EB0016F0F1 /* instructions.txt */,
+				2C586D7F1729E679002A9E8D /* instructionspage2.txt */,
+				2C586D811729E6AA002A9E8D /* instructionspage3.txt */,
+				2C586D831729E6CA002A9E8D /* instructionspage4.txt */,
+				2C586D851729E6E9002A9E8D /* instructionspage5.txt */,
 				D83B9366172120BC008FB76E /* pausebutton.png */,
 				D8A8BFA31708D99000997C86 /* problems.txt */,
 				AB492C0717063CD300CA495A /* Default.png */,
@@ -967,6 +999,10 @@
 				2C1D8E241727B1EB0016F0F1 /* instructions.txt in Resources */,
 				4EBC94371728DDF200B5DFA6 /* savedscores.txt in Resources */,
 				D83B936D1729E207008FB76E /* jump.mp3 in Resources */,
+				2C586D801729E679002A9E8D /* instructionspage2.txt in Resources */,
+				2C586D821729E6AA002A9E8D /* instructionspage3.txt in Resources */,
+				2C586D841729E6CA002A9E8D /* instructionspage4.txt in Resources */,
+				2C586D861729E6E9002A9E8D /* instructionspage5.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,6 +1125,10 @@
 				4E5CA6601724A6A40049BB92 /* HighScoreMenu.m in Sources */,
 				2C1D8E221727ADEF0016F0F1 /* InstructionsMenu.m in Sources */,
 				2C1D8E271727B4280016F0F1 /* Difficulty.m in Sources */,
+				2C586D7E1729E605002A9E8D /* InstructionsPage2.m in Sources */,
+				2C586D891729E9FE002A9E8D /* InstructionsPage3.m in Sources */,
+				2C586D8C1729EB90002A9E8D /* InstructionsPage4.m in Sources */,
+				2C586D8F1729EC5A002A9E8D /* InstructionsPage5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

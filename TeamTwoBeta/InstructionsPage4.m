@@ -6,15 +6,15 @@
 //
 //
 
-#import "InstructionsMenu.h"
+#import "InstructionsPage4.h"
 
 
-@implementation InstructionsMenu
+@implementation InstructionsPage4
 
 + (id) instructionsScene
 {
     CCScene * instructionsScene = [CCScene node];
-    InstructionsMenu * layer =  [InstructionsMenu node];
+    InstructionsPage4 * layer =  [InstructionsPage4 node];
     [instructionsScene addChild: layer];
     return instructionsScene;
 }
@@ -39,24 +39,30 @@
         CCMenuItem *back = [CCMenuItemFont itemWithString:@"Main Menu" block:^(id sender) {
             
 			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
-                                                                            scene:[MainMenu node]]];
+                                                                                         scene:[MainMenu node]]];
+		}];
+        
+        CCMenuItem *previous = [CCMenuItemFont itemWithString:@"Previous Section" block:^(id sender) {
+            
+			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
+                                                                                         scene:[InstructionsPage3 node]]];
 		}];
         
         CCMenuItem *next = [CCMenuItemFont itemWithString:@"Next Section" block:^(id sender) {
             
 			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
-                                                                                         scene:[InstructionsPage2 node]]];
+                                                                                         scene:[InstructionsPage5 node]]];
 		}];
         
-        CCMenu *menu = [CCMenu menuWithItems: back, next, nil];
-        menu.position = ccp(700, 30);
+        CCMenu *menu = [CCMenu menuWithItems: previous, back, next, nil];
+        menu.position = ccp(500, 30);
         
         [menu alignItemsHorizontallyWithPadding:250];
         
         [self addChild:menu];
         
         // Get the file from the resources
-        NSString* path = [[NSBundle mainBundle] pathForResource:@"instructions" ofType:@"txt"];
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"instructionspage4" ofType:@"txt"];
         NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         
         // Create the label

@@ -1,8 +1,8 @@
 //
-//  InstructionsMenu.h
+//  InstructionsPage2.h
 //  TeamTwoBeta
 //
-//  Created by Izzy Funke on 4/23/13.
+//  Created by Izzy Funke on 4/25/13.
 //
 //
 
@@ -10,9 +10,9 @@
 #import "cocos2d.h"
 #import "MainMenu.h"
 #import "InstructionsPage2.h"
+#import "InstructionsPage4.h"
 
-
-@interface InstructionsMenu : CCLayer
+@interface InstructionsPage3 : CCLayer
 
 + (id) instructionsScene;
 - (id)init;
