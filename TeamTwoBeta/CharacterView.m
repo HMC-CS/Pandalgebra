@@ -8,6 +8,7 @@
 //
 
 #import "CharacterView.h"
+#import "SimpleAudioEngine.h"
 
 @implementation CharacterView
 @synthesize answerHit = _answerHit;
@@ -165,6 +166,7 @@
     // to account for the tilting, so we follow the
     // laws of motion.
     character_vel.y = 680.0f;
+    [[SimpleAudioEngine sharedEngine] playEffect:@"jump.mp3"];//play a sound
 }
 
 -(void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration *)acceleration
