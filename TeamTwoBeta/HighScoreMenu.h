@@ -15,6 +15,7 @@
 }
 
 -(void) GoToMainMenu: (id) sender;
+-(void) addScore;
 +(id) scene;
 
 @property int score;

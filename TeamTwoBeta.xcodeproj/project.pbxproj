@@ -11,6 +11,7 @@
 		2C1D8E241727B1EB0016F0F1 /* instructions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D8E231727B1EB0016F0F1 /* instructions.txt */; };
 		2C1D8E271727B4280016F0F1 /* Difficulty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D8E261727B4280016F0F1 /* Difficulty.m */; };
 		4E5CA6601724A6A40049BB92 /* HighScoreMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */; };
+		4EBC94371728DDF200B5DFA6 /* savedscores.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC94361728DDF200B5DFA6 /* savedscores.txt */; };
 		AB492BF417063CD300CA495A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF317063CD300CA495A /* QuartzCore.framework */; };
 		AB492BF617063CD300CA495A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF517063CD300CA495A /* OpenGLES.framework */; };
 		AB492BF817063CD300CA495A /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF717063CD300CA495A /* OpenAL.framework */; };
@@ -157,6 +158,7 @@
 		2C1D8E261727B4280016F0F1 /* Difficulty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Difficulty.m; sourceTree = "<group>"; };
 		4E5CA65E1724A6A30049BB92 /* HighScoreMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreMenu.h; sourceTree = "<group>"; };
 		4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreMenu.m; sourceTree = "<group>"; };
+		4EBC94361728DDF200B5DFA6 /* savedscores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = savedscores.txt; path = Resources/savedscores.txt; sourceTree = "<group>"; };
 		AB492BF017063CD300CA495A /* TeamTwoBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTwoBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB492BF317063CD300CA495A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AB492BF517063CD300CA495A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -524,6 +526,7 @@
 		AB492C0617063CD300CA495A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4EBC94361728DDF200B5DFA6 /* savedscores.txt */,
 				2C1D8E231727B1EB0016F0F1 /* instructions.txt */,
 				D83B9366172120BC008FB76E /* pausebutton.png */,
 				D8A8BFA31708D99000997C86 /* problems.txt */,
@@ -959,6 +962,7 @@
 				ABD9F4E1171BCDC800B7303F /* background.png in Resources */,
 				D83B9367172120BC008FB76E /* pausebutton.png in Resources */,
 				2C1D8E241727B1EB0016F0F1 /* instructions.txt in Resources */,
+				4EBC94371728DDF200B5DFA6 /* savedscores.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

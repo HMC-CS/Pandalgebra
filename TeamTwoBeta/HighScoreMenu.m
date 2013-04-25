@@ -16,6 +16,8 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 
+int NUM_SCORES = 5;
+
 @implementation HighScoreScene
 @synthesize score = _score;
 
@@ -50,16 +52,53 @@
 		// Add the menu to the layer
 		[self addChild:menu];
         
+        // Add score to list if appropriate
+        [self addScore];
     }
     
     return self;
 }
 
--(void) GoToMainMenu: (id) sender {
+-(void) GoToMainMenu: (id) sender
+{
     
     [[CCDirector sharedDirector] sendCleanupToScene];
-    //[[CCDirector sharedDirector] popScene];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[MainMenu node]]];
+}
+
+-(void) addScore
+{
+    //NSMutableArray* scores = [[NSMutableArray alloc] init];
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"savedscores" ofType:@"txt"];
+    
+    NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSMutableArray* scores = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    bool newHighScore = false;
+    NSMutableString* replaceWith = [NSMutableString stringWithFormat:@"%d", _score];
+    NSMutableString* temp;
+    for (int i = 0; i < NUM_SCORES; i++) {
+        
+        // Add a score of 0 in this position if there is none currently.
+        if ([scores count] <= i) {
+            [scores addObject: [NSMutableString stringWithFormat:@"0"]];
+        }
+        
+        // Is this a score in the list that the user's score surpasses?
+        if ((int)[scores objectAtIndex: i] <= _score) {
+            newHighScore = true;
+            temp = [scores objectAtIndex:i];
+            [scores replaceObjectAtIndex:i withObject:replaceWith];
+            replaceWith = temp;
+        }
+    }
+    
+    // The user achieved a high score, so prompt for their name.
+    if (newHighScore) {
+        NSMutableString* name = [NSMutableString stringWithFormat:@"No one yet!"];
+    }
+    
+    // 
 }
 
 -(void) dealloc
