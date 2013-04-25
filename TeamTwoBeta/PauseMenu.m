@@ -26,7 +26,7 @@
         [self addChild:background];
         
         CCLabelTTF *label = [CCLabelTTF labelWithString:@"Paused" fontName:@"Marker Felt" fontSize:60];
-        //label.position = ccp(size.width/2, size.height/2 + 100);
+
         label.position = ccp(512, 512);
         
         [self addChild:label];
@@ -38,18 +38,15 @@
         
         CCMenuItem *mainMenu = [CCMenuItemFont itemWithString:@"Main Menu" target:self selector:@selector(GoToMainMenu:)];
         
-        CCMenuItem *Highscore = [CCMenuItemFont itemFromString:@"Save high score" target:self
-            selector:@selector(GoToHighScoreMenu:)];
+        CCMenuItem *highscore = [CCMenuItemFont itemFromString:@"Save high score" target:self selector:@selector(GoToHighScoreMenu:)];
         
-        CCMenuItem *Quit = [CCMenuItemFont itemFromString:@"Quit" target:self selector:@selector(GoToMainMenu:)];
-        
-        CCMenu *menu = [CCMenu menuWithItems: resume, Highscore, Quit, nil];
+        CCMenu *menu = [CCMenu menuWithItems: resume, highscore, mainMenu, nil];
         menu.position = ccp(240, 131.67f);
 
         
 		[menu alignItemsVerticallyWithPadding:20];
-		//[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
-        [menu setPosition:ccp(512, 412)];
+        
+        [menu setPosition:ccp(512, 372)];
         
         [self addChild:menu];
     }

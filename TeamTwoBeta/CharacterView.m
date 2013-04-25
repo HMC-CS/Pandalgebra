@@ -164,7 +164,7 @@
     // We add in the absolute value of the x velocity
     // to account for the tilting, so we follow the
     // laws of motion.
-    character_vel.y = 630.0f;
+    character_vel.y = 680.0f;
 }
 
 -(void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration *)acceleration
@@ -182,7 +182,7 @@
     // vertically, we only change the x velocity
     // when we tilt.
     if(!stopped){
-        character_vel.x = character_vel.x * accel_filter + accelerate * (1.0f - accel_filter) * 500.0f;
+        character_vel.x = character_vel.x * accel_filter + accelerate * (1.0f - accel_filter) * 800.0f;
     }
 }
 
