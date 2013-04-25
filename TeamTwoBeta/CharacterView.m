@@ -35,6 +35,9 @@
         
         [[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0 / 60)];
         
+        SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
+        [engine preloadEffect:@"jump.mp3"];
+        
         [self resetCharacter];
     }
     
