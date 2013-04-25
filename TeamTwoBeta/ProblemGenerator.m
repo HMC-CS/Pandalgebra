@@ -23,7 +23,7 @@
     // and 4 lines of answers.
     int questionChoice = (arc4random()%55)*5;
     
-    // Create the button objects
+    // Create the selected question and answers to the array objects
     for (int i = 0; i < 5; i++){
         [questionAndAnswers addObject:[allLinedStrings objectAtIndex:questionChoice+i]];
     }

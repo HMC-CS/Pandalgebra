@@ -32,7 +32,7 @@
         [self addChild:label];
         
         [CCMenuItemFont setFontName:@"Marker Felt"];
-        [CCMenuItemFont setFontSize:35];
+        [CCMenuItemFont setFontSize:28];
         
         CCMenuItem *resume = [CCMenuItemFont itemWithString:@"Resume" target:self selector:@selector(resume:)];
         
@@ -45,8 +45,8 @@
 
         
 		[menu alignItemsVerticallyWithPadding:20];
-        
-        [menu setPosition:ccp(512, 372)];
+
+        [menu setPosition:ccp(512, 392)];
         
         [self addChild:menu];
     }

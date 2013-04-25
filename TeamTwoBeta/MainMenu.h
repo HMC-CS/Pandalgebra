@@ -13,8 +13,6 @@
 
 @interface MainMenu : CCLayer 
 
-+(id) menuScene;
 +(id) scene;
--(void) startGame;
 
 @end
