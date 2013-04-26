@@ -1,0 +1,8 @@
+Problems:
+
+At the top of the screen, there is an algebra problem. 
+Below the problem there are four platforms with possible 
+answers. One answer is right and the other three are wrong. 
+The goal of the game is to get Peppermint to jump onto the 
+platform with the correct answer. Solve for the variable 
+in each algebra problem.

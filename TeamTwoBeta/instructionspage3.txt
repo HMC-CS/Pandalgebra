@@ -1,0 +1,9 @@
+Game Play:
+
+When the game starts, Peppermint begins to jump. When he 
+lands on the platform with the correct answer, the platform 
+turns green and the problem resets. If the wrong answer is 
+chosen, the platform turns red and you are given another 
+chance to bounce Peppermint to the right answer. It is also 
+possible to bounce off the ground as many times as necessary. 
+Keep solving problems to get more points!
