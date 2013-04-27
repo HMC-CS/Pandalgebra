@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AB492BEF17063CD300CA495A"
-               BuildableName = "TeamTwoBeta.app"
+               BuildableName = "pandalgebra.app"
                BlueprintName = "pandalgebra"
                ReferencedContainer = "container:pandalgebra.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AB492BEF17063CD300CA495A"
-            BuildableName = "TeamTwoBeta.app"
+            BuildableName = "pandalgebra.app"
             BlueprintName = "pandalgebra"
             ReferencedContainer = "container:pandalgebra.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AB492BEF17063CD300CA495A"
-            BuildableName = "TeamTwoBeta.app"
+            BuildableName = "pandalgebra.app"
             BlueprintName = "pandalgebra"
             ReferencedContainer = "container:pandalgebra.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AB492BEF17063CD300CA495A"
-            BuildableName = "TeamTwoBeta.app"
+            BuildableName = "pandalgebra.app"
             BlueprintName = "pandalgebra"
             ReferencedContainer = "container:pandalgebra.xcodeproj">
          </BuildableReference>
