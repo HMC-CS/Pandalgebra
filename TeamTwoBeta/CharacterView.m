@@ -152,13 +152,31 @@
 
 -(void) stopCharacter
 {
+    
     character_vel.x = 0;
     character_vel.y = 0;
     
     character_acc.x = 0;
     character_acc.y = 0;
     
+    CCSprite *candy = [CCSprite spriteWithFile: @"charactercandy.png"];
+    
+    [self addChild:candy];
+    [candy setPosition:ccp(character_pos.x , character_pos.y)];
+    
+    id rotateCandy = [CCRotateBy actionWithDuration:0.4f angle:180];
+    id seq = [CCSequence actions:rotateCandy, rotateCandy, [CCCallFuncN
+                                                      actionWithTarget:self  selector:@selector(removeCandy:)], nil];
+    [candy runAction:seq];
+
+    
     stopped = TRUE;
+}
+
+-(void) removeCandy: (id) sender
+{
+    [self removeChild:sender cleanup:YES];
+    
 }
 
 // Controls how high the character jumps.

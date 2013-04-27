@@ -26,6 +26,7 @@
 -(void) dealloc;
 -(void) resetCharacter;
 -(void) stopCharacter;
+-(void) removeCandy: (id) sender;
 -(void) jump;
 -(void)accelerometer:(UIAccelerometer*) accelerometer didAccelerate:(UIAcceleration *) acceleration;
 

@@ -106,17 +106,17 @@
 -(void) displayScore
 {
     CGSize screenSize = [[CCDirector sharedDirector] winSize];
-    NSString *message = @"+0";
+    NSString *scoreValue = @"+0";
     
     if (numWrongChoices == 0) {
-        message = @"+30";
+        scoreValue = @"+30";
     } else if (numWrongChoices == 1) {
-        message = @"+20";
+        scoreValue = @"+20";
     } else if (numWrongChoices == 2) {
-        message = @"+10";
+        scoreValue = @"+10";
     }
     
-    CCLabelTTF *label = [CCLabelTTF labelWithString:message fontName:@"Arial" fontSize:100];
+    CCLabelTTF *label = [CCLabelTTF labelWithString:scoreValue fontName:@"Arial" fontSize:100];
     
     [self addChild:label];
     [label setPosition:ccp(screenSize.width/2, screenSize.height/1.5)];
