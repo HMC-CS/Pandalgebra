@@ -27,9 +27,7 @@
         
         [self loadNewProblem];
         
-        CCMenuItem *pause = [CCMenuItemImage itemFromNormalImage:@"pausebutton.png"
-                                                   selectedImage: @"pausebutton.png"
-                                                          target:self selector:@selector(pause:)];
+        CCMenuItem *pause = [CCMenuItemImage itemWithNormalImage:@"pausebutton.png" selectedImage: @"pausebutton.png" target:self selector:@selector(pause:)];
         
         CCMenu *pauseButton = [CCMenu menuWithItems: pause, nil];
         
@@ -48,7 +46,6 @@
         scoreWordLabel = [CCLabelTTF labelWithString:@"SCORE:" fontName:@"Arial" fontSize:24];
         scoreWordLabel.position = ccp(60, 20);
         [self addChild:scoreWordLabel z:1];
-        
     }
     
     return self;

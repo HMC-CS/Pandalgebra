@@ -13,6 +13,7 @@
 #import "MainMenu.h"
 #import "Difficulty.h"
 #import "InstructionsMenu.h"
+#import "SimpleAudioEngine.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -61,6 +62,8 @@
 		
 		[menu alignItemsVerticallyWithPadding:20];
         [menu setPosition:ccp(512, 392)];
+        
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"cartoon_battle.mp3"];//play background music
 		
 		// Add the menu to the layer
 		[self addChild:menu];
