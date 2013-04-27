@@ -518,8 +518,8 @@
 			children = (
 				AB492D7D17063CD500CA495A /* AppDelegate.h */,
 				AB492D7E17063CD500CA495A /* AppDelegate.m */,
-				2C1D8E201727ADEF0016F0F1 /* InstructionsMenu.h */,
 				2C1D8E211727ADEF0016F0F1 /* InstructionsMenu.m */,
+				2C1D8E201727ADEF0016F0F1 /* InstructionsMenu.h */,
 				2C586D7C1729E605002A9E8D /* InstructionsPage2.h */,
 				2C586D7D1729E605002A9E8D /* InstructionsPage2.m */,
 				2C586D871729E9FE002A9E8D /* InstructionsPage3.h */,
