@@ -26,6 +26,7 @@
     CCLabelTTF *scoreLabel;
     CCLabelTTF *scoreWordLabel;
     NSArray* platforms;
+    BOOL backgroundMusicPlaying;
 }
 
 -(void) loadNewProblem;

@@ -156,6 +156,8 @@
 		D83B9367172120BC008FB76E /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D83B9366172120BC008FB76E /* pausebutton.png */; };
 		D83B936D1729E207008FB76E /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D83B936C1729E207008FB76E /* jump.mp3 */; };
 		D83B93711729EBCE008FB76E /* cartoon_battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D83B93701729EBCE008FB76E /* cartoon_battle.mp3 */; };
+		D83B9373172C7A61008FB76E /* tada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D83B9372172C7A61008FB76E /* tada.mp3 */; };
+		D83B9377172C7F66008FB76E /* soundIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D83B9376172C7F66008FB76E /* soundIcon.png */; };
 		D8A8BFA41708D99000997C86 /* problems.txt in Resources */ = {isa = PBXBuildFile; fileRef = D8A8BFA31708D99000997C86 /* problems.txt */; };
 		D8A8BFA71708E3ED00997C86 /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A8BFA61708E3ED00997C86 /* ProblemGenerator.m */; };
 /* End PBXBuildFile section */
@@ -457,6 +459,8 @@
 		D83B9366172120BC008FB76E /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pausebutton.png; path = Resources/pausebutton.png; sourceTree = "<group>"; };
 		D83B936C1729E207008FB76E /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jump.mp3; path = Resources/jump.mp3; sourceTree = "<group>"; };
 		D83B93701729EBCE008FB76E /* cartoon_battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = cartoon_battle.mp3; path = Resources/cartoon_battle.mp3; sourceTree = "<group>"; };
+		D83B9372172C7A61008FB76E /* tada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = tada.mp3; path = Resources/tada.mp3; sourceTree = "<group>"; };
+		D83B9376172C7F66008FB76E /* soundIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soundIcon.png; path = Resources/soundIcon.png; sourceTree = "<group>"; };
 		D8A8BFA31708D99000997C86 /* problems.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = problems.txt; path = Resources/problems.txt; sourceTree = "<group>"; };
 		D8A8BFA51708E3ED00997C86 /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
 		D8A8BFA61708E3ED00997C86 /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
@@ -558,6 +562,8 @@
 		AB492C0617063CD300CA495A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D83B9376172C7F66008FB76E /* soundIcon.png */,
+				D83B9372172C7A61008FB76E /* tada.mp3 */,
 				D83B93701729EBCE008FB76E /* cartoon_battle.mp3 */,
 				D83B936C1729E207008FB76E /* jump.mp3 */,
 				4EBC94361728DDF200B5DFA6 /* savedscores.txt */,
@@ -1007,6 +1013,8 @@
 				2C586D821729E6AA002A9E8D /* instructionspage3.txt in Resources */,
 				2C586D841729E6CA002A9E8D /* instructionspage4.txt in Resources */,
 				2C586D861729E6E9002A9E8D /* instructionspage5.txt in Resources */,
+				D83B9373172C7A61008FB76E /* tada.mp3 in Resources */,
+				D83B9377172C7F66008FB76E /* soundIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

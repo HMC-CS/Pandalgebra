@@ -8,6 +8,7 @@
 //
 
 #import "MainController.h"
+#import "SimpleAudioEngine.h"
 
 @implementation MainController
 
@@ -35,6 +36,16 @@
 
         [self addChild:pauseButton z:1000];
         
+        backgroundMusicPlaying = TRUE;
+        
+        CCMenuItem *backgroundMusic = [CCMenuItemImage itemWithNormalImage:@"soundIcon.png" selectedImage: @"soundIcon.png" target:self selector:@selector(changeBackgroundMusic:)];
+        
+        CCMenu *backgroundMusicButton = [CCMenu menuWithItems: backgroundMusic, nil];
+        
+        backgroundMusicButton.position = ccp(512, 25);
+        
+        [self addChild:backgroundMusicButton z:1000];
+        
         // Scoring Properties Initalized Here
         numWrongChoices = 0;
         
@@ -46,6 +57,9 @@
         scoreWordLabel = [CCLabelTTF labelWithString:@"SCORE:" fontName:@"Arial" fontSize:24];
         scoreWordLabel.position = ccp(60, 20);
         [self addChild:scoreWordLabel z:1];
+        
+        SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
+        [engine preloadEffect:@"tada.mp3"];
     }
     
     return self;
@@ -126,6 +140,7 @@
 - (void)update:(ccTime)deltaTime
 {
     if (characterView.answerHit == answerBarView.correctAnswer){
+        [[SimpleAudioEngine sharedEngine] playEffect:@"tada.mp3"];//play a sound
         [answerBarView answerSelected];
         [characterView stopCharacter];
         [NSTimer scheduledTimerWithTimeInterval:2 target:self
@@ -156,6 +171,17 @@
     PauseMenu *pauseScene = [PauseMenu node];
     pauseScene.score = score;
 	[[CCDirector sharedDirector] pushScene:(CCScene*)pauseScene];
+}
+
+-(void) changeBackgroundMusic: (id) sender {
+    if (backgroundMusicPlaying)
+    {
+        [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];//pause background music
+    }
+    else{
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"cartoon_battle.mp3"];//play background music
+    }
+    backgroundMusicPlaying = !backgroundMusicPlaying;
 }
 
 + (CCScene*)scene
