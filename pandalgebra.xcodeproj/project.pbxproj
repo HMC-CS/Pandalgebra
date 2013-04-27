@@ -183,7 +183,7 @@
 		4E5CA65E1724A6A30049BB92 /* HighScoreMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreMenu.h; sourceTree = "<group>"; };
 		4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreMenu.m; sourceTree = "<group>"; };
 		4EBC94361728DDF200B5DFA6 /* savedscores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = savedscores.txt; path = Resources/savedscores.txt; sourceTree = "<group>"; };
-		AB492BF017063CD300CA495A /* TeamTwoBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamTwoBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB492BF017063CD300CA495A /* pandalgebra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pandalgebra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB492BF317063CD300CA495A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AB492BF517063CD300CA495A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		AB492BF717063CD300CA495A /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -498,7 +498,7 @@
 		AB492BF117063CD300CA495A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB492BF017063CD300CA495A /* TeamTwoBeta.app */,
+				AB492BF017063CD300CA495A /* pandalgebra.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -940,9 +940,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AB492BEF17063CD300CA495A /* TeamTwoBeta */ = {
+		AB492BEF17063CD300CA495A /* pandalgebra */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB492D8817063CD500CA495A /* Build configuration list for PBXNativeTarget "TeamTwoBeta" */;
+			buildConfigurationList = AB492D8817063CD500CA495A /* Build configuration list for PBXNativeTarget "pandalgebra" */;
 			buildPhases = (
 				AB492BEC17063CD300CA495A /* Sources */,
 				AB492BED17063CD300CA495A /* Frameworks */,
@@ -952,9 +952,9 @@
 			);
 			dependencies = (
 			);
-			name = TeamTwoBeta;
+			name = pandalgebra;
 			productName = TeamTwoBeta;
-			productReference = AB492BF017063CD300CA495A /* TeamTwoBeta.app */;
+			productReference = AB492BF017063CD300CA495A /* pandalgebra.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -965,7 +965,7 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 			};
-			buildConfigurationList = AB492BEB17063CD300CA495A /* Build configuration list for PBXProject "TeamTwoBeta" */;
+			buildConfigurationList = AB492BEB17063CD300CA495A /* Build configuration list for PBXProject "pandalgebra" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -977,7 +977,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB492BEF17063CD300CA495A /* TeamTwoBeta */,
+				AB492BEF17063CD300CA495A /* pandalgebra */,
 			);
 		};
 /* End PBXProject section */
@@ -1213,7 +1213,7 @@
 					"-lz",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pandalgebra;
 				PROVISIONING_PROFILE = "96807CDE-A30A-4267-B761-405C636809B5";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "96807CDE-A30A-4267-B761-405C636809B5";
 				WRAPPER_EXTENSION = app;
@@ -1235,7 +1235,7 @@
 					"-lz",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pandalgebra;
 				PROVISIONING_PROFILE = "96807CDE-A30A-4267-B761-405C636809B5";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "96807CDE-A30A-4267-B761-405C636809B5";
 				VALIDATE_PRODUCT = YES;
@@ -1246,7 +1246,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB492BEB17063CD300CA495A /* Build configuration list for PBXProject "TeamTwoBeta" */ = {
+		AB492BEB17063CD300CA495A /* Build configuration list for PBXProject "pandalgebra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB492D8617063CD500CA495A /* Debug */,
@@ -1255,7 +1255,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB492D8817063CD500CA495A /* Build configuration list for PBXNativeTarget "TeamTwoBeta" */ = {
+		AB492D8817063CD500CA495A /* Build configuration list for PBXNativeTarget "pandalgebra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB492D8917063CD500CA495A /* Debug */,
