@@ -42,9 +42,9 @@ int NUM_SCORES = 5;
 		[CCMenuItemFont setFontSize:28];
 		
 		// Menu item for returning to the main menu
-		CCMenuItem *Quit = [CCMenuItemFont itemFromString:@"Quit" target:self selector:@selector(GoToMainMenu:)];
+		CCMenuItem *quit = [CCMenuItemFont itemWithString:@"Quit" target:self selector:@selector(GoToMainMenu:)];
         
-		CCMenu *menu = [CCMenu menuWithItems:Quit, nil];
+		CCMenu *menu = [CCMenu menuWithItems:quit, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
 		[menu setPosition:ccp(512, 412)];
