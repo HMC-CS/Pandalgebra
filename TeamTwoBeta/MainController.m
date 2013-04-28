@@ -8,7 +8,6 @@
 //
 
 #import "MainController.h"
-#import "SimpleAudioEngine.h"
 
 @implementation MainController
 

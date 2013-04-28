@@ -14,7 +14,16 @@
 +(NSMutableArray*) loadProblem
 {
     NSMutableArray *questionAndAnswers = [[NSMutableArray alloc] init];
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"problems" ofType:@"txt"];
+    NSString *level;
+    GlobalVariables* globalVariables = [[GlobalVariables alloc] init];
+    
+    if (globalVariables.difficultyLevel == 1) {
+        level = @"hard";
+    } else {
+        level = @"problems";
+    }
+
+    NSString* path = [[NSBundle mainBundle] pathForResource:level ofType:@"txt"];
     
     NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     NSArray* allLinedStrings = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];

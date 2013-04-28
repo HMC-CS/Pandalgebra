@@ -11,12 +11,6 @@
 
 
 #import "MainMenu.h"
-#import "Difficulty.h"
-#import "InstructionsMenu.h"
-#import "SimpleAudioEngine.h"
-
-// Needed to obtain the Navigation Controller
-#import "AppDelegate.h"
 
 @implementation MainMenu
 -(id)init

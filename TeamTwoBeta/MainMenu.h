@@ -9,6 +9,11 @@
 #import  <GameKit/GameKit.h>
 #import "cocos2d.h"
 #import "MainController.h"
+#import "Difficulty.h"
+#import "InstructionsMenu.h"
+#import "SimpleAudioEngine.h"
+// Needed to obtain the Navigation Controller
+#import "AppDelegate.h"
 
 
 @interface MainMenu : CCLayer 

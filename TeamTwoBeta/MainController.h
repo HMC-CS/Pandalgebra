@@ -14,6 +14,7 @@
 #import "ProblemGenerator.h"
 #import "PauseMenu.h"
 #import "HighScoreMenu.h"
+#import "SimpleAudioEngine.h"
 
 @interface MainController : CCScene
 {
