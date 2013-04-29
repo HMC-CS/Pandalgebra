@@ -72,15 +72,23 @@ int NUM_SCORES = 5;
     // Get the user's information
     NSMutableString* userScore = [NSMutableString stringWithFormat:@"%d", _score];
     
+    // Get the document directory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains
+        (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *directory = [paths objectAtIndex:0];
+    
     // Read in the scores
-    NSString* scoresPath = [[NSBundle mainBundle] pathForResource:@"savedscores" ofType:@"txt"];
+    //NSString* scoresPath = [[NSBundle mainBundle] pathForResource:@"savedscores" ofType:@"txt"];
+    NSString* scoresPath = [NSString stringWithFormat:@"%@/savedscores.txt", directory];
     
     NSString* fileContents = [NSString stringWithContentsOfFile:scoresPath encoding:NSUTF8StringEncoding error:nil];
     NSMutableArray* scores = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
     // Read in the names
-    NSString* namesPath = [[NSBundle mainBundle] pathForResource:@"savednames" ofType:@"txt"];
-    
+    //NSString* namesPath = [[NSBundle mainBundle] pathForResource:@"savednames" ofType:@"txt"];
+    NSString* namesPath = [NSString stringWithFormat:@"%@/savednames.txt", directory];
+    NSLog(namesPath);
+
     fileContents = [NSString stringWithContentsOfFile:namesPath encoding:NSUTF8StringEncoding
                                                 error:nil];
     NSMutableArray* names = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
