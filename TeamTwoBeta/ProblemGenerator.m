@@ -19,7 +19,7 @@
     if (difficulty == 1) {
         level = @"hard";
     } else {
-        level = @"problems";
+        level = @"easy";
     }
 
     NSString* path = [[NSBundle mainBundle] pathForResource:level ofType:@"txt"];
