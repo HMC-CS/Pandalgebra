@@ -12,10 +12,13 @@
 @interface HighScoreScene : CCLayer
 {
     int _score;
+    UIAlertView *message;
 }
 
 -(void) GoToMainMenu: (id) sender;
--(void) addScore;
+-(void) addScore: (NSString*) userName;
+-(NSString*) promptForName;
+-(void) writeNames: (NSMutableArray*) names andScores: (NSMutableArray*) scores;
 +(id) scene;
 
 @property int score;
