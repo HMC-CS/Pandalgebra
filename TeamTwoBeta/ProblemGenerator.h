@@ -8,10 +8,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GlobalVariables.h"
 
 @interface ProblemGenerator : NSObject
 
-+(NSMutableArray*) loadProblem;
++(NSMutableArray*) loadProblem: (int) difficulty;
+
 
 @end

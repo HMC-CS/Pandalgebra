@@ -11,13 +11,12 @@
 
 @implementation ProblemGenerator
 
-+(NSMutableArray*) loadProblem
++(NSMutableArray*) loadProblem: (int) difficulty
 {
     NSMutableArray *questionAndAnswers = [[NSMutableArray alloc] init];
     NSString *level;
-    GlobalVariables* globalVariables = [[GlobalVariables alloc] init];
-    
-    if (globalVariables.difficultyLevel == 1) {
+        
+    if (difficulty == 1) {
         level = @"hard";
     } else {
         level = @"problems";
