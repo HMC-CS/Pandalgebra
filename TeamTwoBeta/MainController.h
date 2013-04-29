@@ -28,13 +28,18 @@
     CCLabelTTF *scoreWordLabel;
     NSArray* platforms;
     BOOL backgroundMusicPlaying;
+    int problemDifficulty;
 }
 
 -(void) loadNewProblem;
 -(void) addPoints;
 -(void) displayScore;
 -(void) removeLabel:(id) sender;
--(void)update:(ccTime)deltaTime;
+-(void) update:(ccTime)deltaTime;
+-(void) setProblemDifficulty: (int) difficulty;
+-(int) problemDifficulty;
 +(CCScene*)scene;
 
+
 @end
+

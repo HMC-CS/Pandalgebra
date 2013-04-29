@@ -27,6 +27,8 @@
         
         [self loadNewProblem];
         
+        problemDifficulty = 0;
+        
         CCMenuItem *pause = [CCMenuItemImage itemWithNormalImage:@"pausebutton.png" selectedImage: @"pausebutton.png" target:self selector:@selector(pause:)];
         
         CCMenu *pauseButton = [CCMenu menuWithItems: pause, nil];
@@ -70,11 +72,11 @@
     [characterView resetCharacter];
     
     // Get the questions and answers from the problem generator.
-    NSMutableArray *questionAndAnswers = [ProblemGenerator loadProblem];
+    NSMutableArray *questionAndAnswers = [ProblemGenerator loadProblem: problemDifficulty];
     
     // Make sure that this is a different problem from the previous one.
     while ([mathProblemView.problemString isEqualToString: questionAndAnswers[0]])
-        questionAndAnswers = [ProblemGenerator loadProblem];
+        questionAndAnswers = [ProblemGenerator loadProblem: problemDifficulty];
     
     // Set the math problem.
     [mathProblemView setMathProblem:[questionAndAnswers objectAtIndex:0]];
@@ -135,7 +137,6 @@
 }
 
 
-
 - (void)update:(ccTime)deltaTime
 {
     if (characterView.answerHit == answerBarView.correctAnswer){
@@ -166,6 +167,27 @@
     [characterView update: deltaTime withPlatforms:platforms andAnswer:answerBarView.correctAnswer];
 }
 
+-(void) setProblemDifficulty:(int) difficulty
+{
+    problemDifficulty = difficulty;
+    [self loadNewProblem];
+}
+
+-(int) problemDifficulty
+{
+    return problemDifficulty;
+}
+
++ (CCScene*)scene
+{
+    CCScene *scene = [CCScene node];
+    
+    MainController *mainController = [self node];
+    [scene addChild:mainController];
+    
+    return scene;
+}
+
 -(void) pause: (id) sender {
     PauseMenu *pauseScene = [PauseMenu node];
     pauseScene.score = score;
@@ -181,16 +203,6 @@
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"cartoon_battle.mp3"];//play background music
     }
     backgroundMusicPlaying = !backgroundMusicPlaying;
-}
-
-+ (CCScene*)scene
-{
-    CCScene *scene = [CCScene node];
-    
-    MainController *mainController = [self node];
-    [scene addChild:mainController];
-    
-    return scene;
 }
 
 @end
