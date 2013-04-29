@@ -18,6 +18,7 @@
 		2C586D891729E9FE002A9E8D /* InstructionsPage3.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C586D881729E9FE002A9E8D /* InstructionsPage3.m */; };
 		2C586D8C1729EB90002A9E8D /* InstructionsPage4.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C586D8B1729EB90002A9E8D /* InstructionsPage4.m */; };
 		2C586D8F1729EC5A002A9E8D /* InstructionsPage5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C586D8E1729EC59002A9E8D /* InstructionsPage5.m */; };
+		4E209E67172E0DA60052A12F /* savednames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4E209E66172E0DA60052A12F /* savednames.txt */; };
 		4E5CA6601724A6A40049BB92 /* HighScoreMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */; };
 		4EBC94371728DDF200B5DFA6 /* savedscores.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC94361728DDF200B5DFA6 /* savedscores.txt */; };
 		AB1978F8172C9C010091A1D7 /* charactercandy.png in Resources */ = {isa = PBXBuildFile; fileRef = AB1978F7172C9C010091A1D7 /* charactercandy.png */; };
@@ -182,6 +183,7 @@
 		2C586D8B1729EB90002A9E8D /* InstructionsPage4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsPage4.m; sourceTree = "<group>"; };
 		2C586D8D1729EC59002A9E8D /* InstructionsPage5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsPage5.h; sourceTree = "<group>"; };
 		2C586D8E1729EC59002A9E8D /* InstructionsPage5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsPage5.m; sourceTree = "<group>"; };
+		4E209E66172E0DA60052A12F /* savednames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = savednames.txt; path = Resources/savednames.txt; sourceTree = "<group>"; };
 		4E5CA65E1724A6A30049BB92 /* HighScoreMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreMenu.h; sourceTree = "<group>"; };
 		4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreMenu.m; sourceTree = "<group>"; };
 		4EBC94361728DDF200B5DFA6 /* savedscores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = savedscores.txt; path = Resources/savedscores.txt; sourceTree = "<group>"; };
@@ -567,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				D86A5B5E172E238900EFD54A /* hard.txt */,
+				4E209E66172E0DA60052A12F /* savednames.txt */,
 				D83B9376172C7F66008FB76E /* soundIcon.png */,
 				D83B9372172C7A61008FB76E /* tada.mp3 */,
 				D83B93701729EBCE008FB76E /* cartoon_battle.mp3 */,
@@ -1023,6 +1026,7 @@
 				D83B9377172C7F66008FB76E /* soundIcon.png in Resources */,
 				AB1978F8172C9C010091A1D7 /* charactercandy.png in Resources */,
 				D86A5B5F172E238900EFD54A /* hard.txt in Resources */,
+				4E209E67172E0DA60052A12F /* savednames.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
