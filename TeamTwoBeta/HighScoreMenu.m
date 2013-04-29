@@ -73,15 +73,15 @@ int NUM_SCORES = 5;
     NSMutableString* userScore = [NSMutableString stringWithFormat:@"%d", _score];
     
     // Read in the scores
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"savedscores" ofType:@"txt"];
+    NSString* scoresPath = [[NSBundle mainBundle] pathForResource:@"savedscores" ofType:@"txt"];
     
-    NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSString* fileContents = [NSString stringWithContentsOfFile:scoresPath encoding:NSUTF8StringEncoding error:nil];
     NSMutableArray* scores = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
     // Read in the names
-    path = [[NSBundle mainBundle] pathForResource:@"savednames" ofType:@"txt"];
+    NSString* namesPath = [[NSBundle mainBundle] pathForResource:@"savednames" ofType:@"txt"];
     
-    fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding
+    fileContents = [NSString stringWithContentsOfFile:namesPath encoding:NSUTF8StringEncoding
                                                 error:nil];
     NSMutableArray* names = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
@@ -97,16 +97,18 @@ int NUM_SCORES = 5;
                 [names insertObject:userName atIndex:i];
                 [names removeLastObject];
             }
-            
         }
     }
     
-    // The user achieved a high score, so prompt for their name.
-    if (newHighScore != -1) {
-        [names replaceObjectAtIndex:newHighScore withObject: userName];
-    }
+    // Write out to the files
+    NSString* scoresOut = [scores componentsJoinedByString:@"\n"];
+    [scoresOut writeToFile:scoresPath atomically:YES
+                  encoding:NSUTF8StringEncoding error:noErr];
+    NSString* namesOut = [names componentsJoinedByString:@"\n"];
+    [namesOut writeToFile:namesPath atomically:YES
+                  encoding:NSUTF8StringEncoding error:noErr];    
     
-    // Make the menu using these scores and names
+    // Write to the screen
     [self writeNames: names andScores: scores];
 }
 
@@ -115,8 +117,8 @@ int NUM_SCORES = 5;
     message = [[UIAlertView alloc] initWithTitle:@"What is your name?"
                                                           message:nil
                                                          delegate:self
-                                                cancelButtonTitle:@"Cancel"
-                                                otherButtonTitles:@"OK", nil];
+                                                cancelButtonTitle:@"Anonymous"
+                                                otherButtonTitles:@"Save name", nil];
         
     [message setAlertViewStyle:UIAlertViewStylePlainTextInput];
     [message show];
