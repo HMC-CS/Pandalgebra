@@ -87,12 +87,21 @@ int NUM_SCORES = 5;
     // Read in the names
     //NSString* namesPath = [[NSBundle mainBundle] pathForResource:@"savednames" ofType:@"txt"];
     NSString* namesPath = [NSString stringWithFormat:@"%@/savednames.txt", directory];
-    NSLog(namesPath);
-
     fileContents = [NSString stringWithContentsOfFile:namesPath encoding:NSUTF8StringEncoding
                                                 error:nil];
     NSMutableArray* names = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
+    // Initialize the arrays to default values if they're empty.
+    if ([names count] == 0) {
+        names = [NSMutableArray arrayWithCapacity:NUM_SCORES];
+        scores = [NSMutableArray arrayWithCapacity:NUM_SCORES];
+        for (int i = 0; i < NUM_SCORES; i++) {
+            [names insertObject:@"No one yet!" atIndex:i];
+            [scores insertObject:@"0" atIndex:i];
+        }
+    }
+    
+    // Put the user in the list
     int newHighScore = -1;
     for (int i = 0; i < NUM_SCORES; i++) {
         // Is this a score in the list that the user's score surpasses?
