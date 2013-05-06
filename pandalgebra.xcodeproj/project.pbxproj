@@ -21,6 +21,8 @@
 		4E209E67172E0DA60052A12F /* savednames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4E209E66172E0DA60052A12F /* savednames.txt */; };
 		4E5CA6601724A6A40049BB92 /* HighScoreMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */; };
 		4EBC94371728DDF200B5DFA6 /* savedscores.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC94361728DDF200B5DFA6 /* savedscores.txt */; };
+		4EE725691738441B0062A0C8 /* CreditsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE725681738441B0062A0C8 /* CreditsMenu.m */; };
+		4EE7256B1738466C0062A0C8 /* credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4EE7256A1738466C0062A0C8 /* credits.txt */; };
 		AB1978F8172C9C010091A1D7 /* charactercandy.png in Resources */ = {isa = PBXBuildFile; fileRef = AB1978F7172C9C010091A1D7 /* charactercandy.png */; };
 		AB492BF417063CD300CA495A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF317063CD300CA495A /* QuartzCore.framework */; };
 		AB492BF617063CD300CA495A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF517063CD300CA495A /* OpenGLES.framework */; };
@@ -187,6 +189,9 @@
 		4E5CA65E1724A6A30049BB92 /* HighScoreMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreMenu.h; sourceTree = "<group>"; };
 		4E5CA65F1724A6A40049BB92 /* HighScoreMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreMenu.m; sourceTree = "<group>"; };
 		4EBC94361728DDF200B5DFA6 /* savedscores.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = savedscores.txt; path = Resources/savedscores.txt; sourceTree = "<group>"; };
+		4EE725671738441B0062A0C8 /* CreditsMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsMenu.h; sourceTree = "<group>"; };
+		4EE725681738441B0062A0C8 /* CreditsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsMenu.m; sourceTree = "<group>"; };
+		4EE7256A1738466C0062A0C8 /* credits.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = credits.txt; path = Resources/credits.txt; sourceTree = "<group>"; };
 		AB1978F7172C9C010091A1D7 /* charactercandy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charactercandy.png; sourceTree = "<group>"; };
 		AB492BF017063CD300CA495A /* pandalgebra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pandalgebra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB492BF317063CD300CA495A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -530,8 +535,10 @@
 			children = (
 				AB492D7D17063CD500CA495A /* AppDelegate.h */,
 				AB492D7E17063CD500CA495A /* AppDelegate.m */,
-				2C1D8E211727ADEF0016F0F1 /* InstructionsMenu.m */,
+				4EE725671738441B0062A0C8 /* CreditsMenu.h */,
+				4EE725681738441B0062A0C8 /* CreditsMenu.m */,
 				2C1D8E201727ADEF0016F0F1 /* InstructionsMenu.h */,
+				2C1D8E211727ADEF0016F0F1 /* InstructionsMenu.m */,
 				2C586D7C1729E605002A9E8D /* InstructionsPage2.h */,
 				2C586D7D1729E605002A9E8D /* InstructionsPage2.m */,
 				2C586D871729E9FE002A9E8D /* InstructionsPage3.h */,
@@ -568,6 +575,7 @@
 		AB492C0617063CD300CA495A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4EE7256A1738466C0062A0C8 /* credits.txt */,
 				D86A5B5E172E238900EFD54A /* hard.txt */,
 				4E209E66172E0DA60052A12F /* savednames.txt */,
 				D83B9376172C7F66008FB76E /* soundIcon.png */,
@@ -1027,6 +1035,7 @@
 				AB1978F8172C9C010091A1D7 /* charactercandy.png in Resources */,
 				D86A5B5F172E238900EFD54A /* hard.txt in Resources */,
 				4E209E67172E0DA60052A12F /* savednames.txt in Resources */,
+				4EE7256B1738466C0062A0C8 /* credits.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1153,6 +1162,7 @@
 				2C586D891729E9FE002A9E8D /* InstructionsPage3.m in Sources */,
 				2C586D8C1729EB90002A9E8D /* InstructionsPage4.m in Sources */,
 				2C586D8F1729EC5A002A9E8D /* InstructionsPage5.m in Sources */,
+				4EE725691738441B0062A0C8 /* CreditsMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

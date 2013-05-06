@@ -1,5 +1,5 @@
 //
-//  MainMenu.m
+//  HighScoreMenu.m
 //  TeamTwoBeta
 //
 //  Created by Ari Schlesinger, Abby Gregory, Izzy Funke, and Miranda Parker on 4/7/13.
@@ -52,9 +52,9 @@ int NUM_SCORES = 5;
         // Add the menu to the layer
         [self addChild:menu];
         
-        // Add score to list if appropriate
-        NSString* userName = [self promptForName];
-        //[self addScore: userName];
+        // Prompt the user for their name. Their score will then be added to the list
+        // if appropriate.
+        [self promptForName];
     }
     
     return self;
@@ -78,14 +78,12 @@ int NUM_SCORES = 5;
     NSString *directory = [paths objectAtIndex:0];
     
     // Read in the scores
-    //NSString* scoresPath = [[NSBundle mainBundle] pathForResource:@"savedscores" ofType:@"txt"];
     NSString* scoresPath = [NSString stringWithFormat:@"%@/savedscores.txt", directory];
     
     NSString* fileContents = [NSString stringWithContentsOfFile:scoresPath encoding:NSUTF8StringEncoding error:nil];
     NSMutableArray* scores = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
     // Read in the names
-    //NSString* namesPath = [[NSBundle mainBundle] pathForResource:@"savednames" ofType:@"txt"];
     NSString* namesPath = [NSString stringWithFormat:@"%@/savednames.txt", directory];
     fileContents = [NSString stringWithContentsOfFile:namesPath encoding:NSUTF8StringEncoding
                                                 error:nil];

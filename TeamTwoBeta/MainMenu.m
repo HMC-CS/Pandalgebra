@@ -26,7 +26,6 @@
         
         
         CCLabelTTF *title = [CCLabelTTF labelWithString:@"PANDALGEBRA" fontName:@"Marker Felt" fontSize:64];
-        //title.position = ccp(size.width /2  + 125, size.height/2);
         title.position = ccp(512, 512);
         [self addChild:title];
 
@@ -36,29 +35,32 @@
 		// Menu items for playing the game and exiting the game
 		CCMenuItem *playGame = [CCMenuItemFont itemWithString:@"Play Game" block:
         ^(id sender) {
-			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:
-                                                       [Difficulty node]]];
+			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
+                                                        scene:[Difficulty node]]];
 		}];
         
         CCMenuItem *instructions = [CCMenuItemFont itemWithString:@"Instructions" block:^(id sender) {
-            
 			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
-                                                                        scene:[InstructionsMenu node]]];
+                                                        scene:[InstructionsMenu node]]];
+		}];
+        
+        CCMenuItem *credits = [CCMenuItemFont itemWithString:@"Credits" block:^(id sender) {
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
+                                                        scene:[CreditsMenu node]]];
 		}];
         
         CCMenuItem *quit = [CCMenuItemFont itemWithString:@"Quit" block:^(id sender) {
-
 			exit(0);
-            
 		}];
 
-		CCMenu *menu = [CCMenu menuWithItems:playGame, instructions, quit, nil];
+		CCMenu *menu = [CCMenu menuWithItems:playGame, instructions, credits, quit, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
-        [menu setPosition:ccp(512, 392)];
+        [menu setPosition:ccp(512, 372)];
         
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"cartoon_battle.mp3"];//play background music
-		
+        //play background music
+		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"cartoon_battle.mp3"];
+        
 		// Add the menu to the layer
 		[self addChild:menu];
 

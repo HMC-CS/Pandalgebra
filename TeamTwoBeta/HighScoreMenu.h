@@ -1,5 +1,5 @@
 //
-//  MainMenu.h
+//  HighScoreMenu.h
 //  TeamTwoBeta
 //
 //  Created by Ari Schlesinger, Abby Gregory, Izzy Funke, and Miranda Parker on 4/7/13.
