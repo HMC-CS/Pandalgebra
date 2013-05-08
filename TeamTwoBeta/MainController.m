@@ -47,6 +47,11 @@
         
         [self addChild:backgroundMusicButton z:1000];
         
+        noSound = [CCSprite spriteWithFile: @"soundSlash.png"];
+        noSound.position = ccp(512,25);
+        [noSound retain];
+
+        
         // Scoring Properties Initalized Here
         numWrongChoices = 0;
         
@@ -198,9 +203,12 @@
     if (backgroundMusicPlaying)
     {
         [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];//pause background music
+        [self addChild: noSound z: 2 ];  // Adds a slash over the volume icon
+        
     }
     else{
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"cartoon_battle.mp3"];//play background music
+        [self removeChild: noSound cleanup:NO];
     }
     backgroundMusicPlaying = !backgroundMusicPlaying;
 }

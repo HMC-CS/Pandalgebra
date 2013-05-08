@@ -29,6 +29,7 @@
     NSArray* platforms;
     BOOL backgroundMusicPlaying;
     int problemDifficulty;
+    CCSprite* noSound;
 }
 
 -(void) loadNewProblem;
