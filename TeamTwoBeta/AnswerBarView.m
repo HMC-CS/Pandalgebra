@@ -53,32 +53,39 @@
     return self;
 }
 
-// Handles what happens when an answer is chosen by the player/character
+// Replaces the correct answer's platform with the correct graphic when the character/player
+// lands on it.
 -(void) answerSelected
 {
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
-    CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 40, 100, 40)];
+    CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture]
+                                                rect:CGRectMake(0, 40, 100, 40)];
     [batchNode removeChildByTag:_correctAnswer cleanup:TRUE];
     [batchNode addChild:platform z:3 tag:_correctAnswer];
     [self resetPlatforms];
 }
 
+// Replaces an incorrect answer's platform with the incorrect graphic when the character/player
+// lands on it.
 -(void) wrongAnswerSelected: (int) tag
 {
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
-    CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 80, 100, 40)];
+    CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture]
+                                                rect:CGRectMake(0, 80, 100, 40)];
     [batchNode removeChildByTag:tag cleanup:TRUE];
     [batchNode addChild:platform z:3 tag:tag];
     [self resetPlatforms];
 }
 
+// Returns all four platforms to their original graphic.
 -(void) answerUnselected
 {
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
     
     for(int i = 0; i < 4; i++)
     {
-        CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture] rect:CGRectMake(0, 0, 100, 40)];
+        CCSprite *platform = [CCSprite spriteWithTexture:[batchNode texture]
+                                                    rect:CGRectMake(0, 0, 100, 40)];
         [batchNode removeChildByTag:i cleanup:TRUE];
         [batchNode addChild:platform z:3 tag:i];
     }
@@ -144,11 +151,6 @@
     CCSpriteBatchNode *batchNode = (CCSpriteBatchNode*)[self getChildByTag:4];
     CCSprite *platform = (CCSprite*)[batchNode getChildByTag:platformTag];
     return platform.position;
-}
-
-- (void)update:(ccTime) deltaTime
-{
-
 }
 
 @end

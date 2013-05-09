@@ -32,15 +32,17 @@
     CCSprite* noSound;
 }
 
+-(id) init;
 -(void) loadNewProblem;
 -(void) addPoints;
 -(void) displayScore;
--(void) removeLabel:(id) sender;
--(void) update:(ccTime)deltaTime;
+-(void) removeLabel: (id) sender;
+-(void) update: (ccTime) deltaTime;
 -(void) setProblemDifficulty: (int) difficulty;
 -(int) problemDifficulty;
-+(CCScene*)scene;
-
+-(void) pause: (id) sender;
+-(void) changeBackgroundMusic: (id) sender;
++(CCScene*) scene;
 
 @end
 

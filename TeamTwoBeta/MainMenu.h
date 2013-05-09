@@ -19,6 +19,7 @@
 
 @interface MainMenu : CCLayer 
 
+-(id) init;
 +(id) scene;
 
 @end

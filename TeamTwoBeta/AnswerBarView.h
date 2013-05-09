@@ -16,16 +16,15 @@
     int NUM_ANSWERS;
 }
 
--(void) setAnswerOptions: (NSString*) first secondOption: (NSString*) second thirdOption: (NSString*) third fourthOption: (NSString*) fourth;
+-(id) init;
+-(void) setAnswerOptions: (NSString*) first secondOption: (NSString*) second
+             thirdOption: (NSString*) third fourthOption: (NSString*) fourth;
 -(void) randomizeAnswerOrder: (NSString*) first;
 -(void) resetPlatforms;
 -(void) answerSelected;
 -(void) wrongAnswerSelected: (int) tag;
 -(void) answerUnselected;
 -(CGPoint) getPlatformPosition: (int) platformTag;
--(void) update: (ccTime) deltaTime;
-
 
 @property int correctAnswer;
-
 @end

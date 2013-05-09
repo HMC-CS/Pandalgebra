@@ -10,6 +10,14 @@
 
 @implementation Difficulty
 
++ (id) difficultyScene
+{
+    CCScene * difficultyScene = [CCScene node];
+    Difficulty * layer =  [Difficulty node];
+    [difficultyScene addChild: layer];
+    return difficultyScene;
+}
+
 - (id)init
 {
     if ((self = [super init])) {
@@ -54,15 +62,5 @@
     
     return self;
 }
-
-
-+ (id) difficultyScene
-{
-    CCScene * difficultyScene = [CCScene node];
-    Difficulty * layer =  [Difficulty node];
-    [difficultyScene addChild: layer];
-    return difficultyScene;
-}
-
 
 @end

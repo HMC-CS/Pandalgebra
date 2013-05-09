@@ -12,12 +12,8 @@
 #import "MainMenu.h"
 
 @interface Difficulty : CCLayer
-{
-
-}
-
 
 + (id) difficultyScene;
-- (id)init;
+- (id) init;
 
 @end

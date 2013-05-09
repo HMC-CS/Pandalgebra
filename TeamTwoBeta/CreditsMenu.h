@@ -13,6 +13,6 @@
 @interface CreditsMenu : CCLayer
     
 + (id) creditsScene;
-- (id)init;
+- (id) init;
 
 @end

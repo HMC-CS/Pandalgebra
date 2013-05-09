@@ -21,7 +21,7 @@ int NUM_SCORES = 5;
 @implementation HighScoreScene
 @synthesize score = _score;
 
--(id)init
+-(id) init
 {
     if (self = [super init]) {
         
@@ -140,7 +140,7 @@ int NUM_SCORES = 5;
     return [message textFieldAtIndex:0].text;
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
         [self addScore: [message textFieldAtIndex:0].text];

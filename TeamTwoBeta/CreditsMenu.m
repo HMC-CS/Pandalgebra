@@ -18,7 +18,7 @@
     return creditsScene;
 }
 
-- (id)init
+- (id) init
 {
     if ((self = [super init])) {
         

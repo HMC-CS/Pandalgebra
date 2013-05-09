@@ -15,6 +15,7 @@
     UIAlertView *message;
 }
 
+-(id) init;
 -(void) GoToMainMenu: (id) sender;
 -(void) addScore: (NSString*) userName;
 -(NSString*) promptForName;

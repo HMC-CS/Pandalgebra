@@ -14,6 +14,7 @@
     int _score;
 }
 
+-(id) init;
 -(void) resume: (id) sender;
 -(void) GoToMainMenu: (id) sender;
 -(void) GoToHighScoreMenu: (id) sender;

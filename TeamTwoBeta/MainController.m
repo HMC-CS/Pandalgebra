@@ -11,7 +11,7 @@
 
 @implementation MainController
 
--(id)init
+-(id) init
 {
     if(self = [super init]){
         [self scheduleUpdate];
@@ -96,7 +96,7 @@
     [questionAndAnswers release];
 }
 
--(void)addPoints
+-(void) addPoints
 {
     if (numWrongChoices == 0) {
         score+=30;
@@ -142,10 +142,10 @@
 }
 
 
-- (void)update:(ccTime)deltaTime
+- (void) update: (ccTime) deltaTime
 {
     if (characterView.answerHit == answerBarView.correctAnswer){
-        [[SimpleAudioEngine sharedEngine] playEffect:@"tada.mp3"];//play a sound
+        [[SimpleAudioEngine sharedEngine] playEffect:@"tada.mp3"];
         [answerBarView answerSelected];
         [characterView stopCharacter];
         [NSTimer scheduledTimerWithTimeInterval:2 target:self
@@ -172,7 +172,7 @@
     [characterView update: deltaTime withPlatforms:platforms andAnswer:answerBarView.correctAnswer];
 }
 
--(void) setProblemDifficulty:(int) difficulty
+-(void) setProblemDifficulty: (int) difficulty
 {
     problemDifficulty = difficulty;
     [self loadNewProblem];
@@ -183,23 +183,15 @@
     return problemDifficulty;
 }
 
-+ (CCScene*)scene
+-(void) pause: (id) sender
 {
-    CCScene *scene = [CCScene node];
-    
-    MainController *mainController = [self node];
-    [scene addChild:mainController];
-    
-    return scene;
-}
-
--(void) pause: (id) sender {
     PauseMenu *pauseScene = [PauseMenu node];
     pauseScene.score = score;
 	[[CCDirector sharedDirector] pushScene:(CCScene*)pauseScene];
 }
 
--(void) changeBackgroundMusic: (id) sender {
+-(void) changeBackgroundMusic: (id) sender
+{
     if (backgroundMusicPlaying)
     {
         [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];//pause background music
@@ -211,6 +203,16 @@
         [self removeChild: noSound cleanup:NO];
     }
     backgroundMusicPlaying = !backgroundMusicPlaying;
+}
+
++(CCScene*) scene
+{
+    CCScene *scene = [CCScene node];
+    
+    MainController *mainController = [self node];
+    [scene addChild:mainController];
+    
+    return scene;
 }
 
 @end

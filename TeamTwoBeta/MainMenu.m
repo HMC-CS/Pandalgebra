@@ -13,7 +13,7 @@
 #import "MainMenu.h"
 
 @implementation MainMenu
--(id)init
+-(id) init
 {
     if (self = [super init]) {
 
