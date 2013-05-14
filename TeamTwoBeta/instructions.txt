@@ -1,4 +1,3 @@
 Welcome to PANDALGEBRA! Peppermint the Panda is lost in the 
 bamboo forests of China! He is hungry and needs to answer 
-math problems to find his favorite food: peppermint. He 
-needs your help to solve the problems and fill his tummy!
+math problems to find his favorite food: peppermint!
