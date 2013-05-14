@@ -37,7 +37,7 @@
                                              hAlignment:UITextAlignmentLeft
                                              fontName:@"Marker Felt"
                                              fontSize:34];
-        title.position = ccp(612-text_width/2, 612);
+        title.position = ccp(412-text_width/2, 612);
         [self addChild:title];
 
         // The text and the main menu button
@@ -56,7 +56,7 @@
         [label setColor:ccWHITE];
         
         // Position it on the screen
-        label.position = ccp(612,362);
+        label.position = ccp(412,362);
         
         // Add it to the scene so it can be displayed
         [self addChild:label];
