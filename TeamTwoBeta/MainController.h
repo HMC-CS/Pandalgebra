@@ -15,6 +15,7 @@
 #import "PauseMenu.h"
 #import "HighScoreMenu.h"
 #import "SimpleAudioEngine.h"
+#import "WaitView.h"
 
 @interface MainController : CCScene
 {
@@ -30,6 +31,7 @@
     BOOL backgroundMusicPlaying;
     int problemDifficulty;
     CCSprite* noSound;
+    BOOL waitViewDisplay;
 }
 
 -(id) init;
@@ -41,6 +43,7 @@
 -(void) setProblemDifficulty: (int) difficulty;
 -(int) problemDifficulty;
 -(void) pause: (id) sender;
+
 -(void) changeBackgroundMusic: (id) sender;
 +(CCScene*) scene;
 
