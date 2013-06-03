@@ -12,12 +12,12 @@
 
 
 @interface WaitView : CCLayer{
-    MathProblemView *_problem;
+    NSString *_problem;
 }
 
-
+-(id) initWithProblem:(NSString*)problemString;
 +(id)scene;
 
-@property MathProblemView* problem;
+@property NSString* problem;
 
 @end

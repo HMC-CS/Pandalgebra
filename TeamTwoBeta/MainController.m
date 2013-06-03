@@ -157,9 +157,14 @@
     // displays the wait scene, if needed
     if (waitViewDisplay)
     {
-        WaitView* waitView = [[WaitView alloc] init];
-        waitView.problem = mathProblemView;
+        NSLog(@"About to init");
+        WaitView* waitView = [[WaitView alloc] initWithProblem:mathProblemView.problemString];
+        //WaitView* waitView = [WaitView node];
+        NSLog(@"returned");
+        //waitView.problem = mathProblemView;
+        //[waitView addChild:mathProblemView];
         [[CCDirector sharedDirector] pushScene:(CCScene*)waitView];
+        //[[CCDirector sharedDirector] pushScene:(CCScene*)mathProblemView];
         waitViewDisplay = NO;
     }
     
