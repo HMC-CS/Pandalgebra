@@ -25,7 +25,8 @@
         characterView = [CharacterView node];
         [self addChild:characterView];
         
-        [self loadNewProblem];
+        // don't think we need this
+        //[self loadNewProblem];
         
         problemDifficulty = 0;
         
@@ -66,6 +67,7 @@
         
         SimpleAudioEngine *engine = [SimpleAudioEngine sharedEngine];
         [engine preloadEffect:@"tada.mp3"];
+        
     }
     
     return self;
@@ -73,7 +75,12 @@
 
 -(void) loadNewProblem
 {
+    // each time a problem is loaded, we want to pause the game and display the problem
+    waitViewDisplay = YES;
+    
+
     // Start the character back up.
+    
     [characterView resetCharacter];
     
     // Get the questions and answers from the problem generator.
@@ -94,6 +101,8 @@
     
     [answerBarView setAnswerOptions:first secondOption:second thirdOption:third fourthOption:fourth];
     [questionAndAnswers release];
+    
+    
 }
 
 -(void) addPoints
@@ -142,14 +151,22 @@
 }
 
 
+
 - (void) update: (ccTime) deltaTime
 {
+    // displays the wait scene, if needed
+    if (waitViewDisplay)
+    {
+        [[CCDirector sharedDirector] pushScene:[WaitView node]];
+        waitViewDisplay = NO;
+    }
+    
     if (characterView.answerHit == answerBarView.correctAnswer){
         [[SimpleAudioEngine sharedEngine] playEffect:@"tada.mp3"];
         [answerBarView answerSelected];
         [characterView stopCharacter];
         [NSTimer scheduledTimerWithTimeInterval:2 target:self
-                                selector:@selector(loadNewProblem) userInfo:nil repeats:NO];
+                                       selector:@selector(loadNewProblem) userInfo:nil repeats:NO];
         [self displayScore];
         [self addPoints];
         numWrongChoices = 0;
@@ -175,7 +192,9 @@
 -(void) setProblemDifficulty: (int) difficulty
 {
     problemDifficulty = difficulty;
-    [self loadNewProblem];
+    [self performSelector:@selector(loadNewProblem)];
+ 
+
 }
 
 -(int) problemDifficulty
@@ -189,6 +208,7 @@
     pauseScene.score = score;
 	[[CCDirector sharedDirector] pushScene:(CCScene*)pauseScene];
 }
+
 
 -(void) changeBackgroundMusic: (id) sender
 {
@@ -213,6 +233,10 @@
     [scene addChild:mainController];
     
     return scene;
+}
+
+-(void) change{
+    waitViewDisplay = NO;
 }
 
 @end
