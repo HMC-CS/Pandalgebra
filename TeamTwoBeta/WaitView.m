@@ -7,8 +7,11 @@
 //
 
 #import "WaitView.h"
+#import "MainController.h"
+
 
 @implementation WaitView
+@synthesize problem = _problem;
 
 - (id)init
 {
@@ -21,11 +24,12 @@
         // Ask director for the window size
         [self setIsTouchEnabled:YES];
 		CGSize size = [[CCDirector sharedDirector] winSize];
-        NSLog(@"waitview init");
-        // Create Menu Background
-        CCSprite *background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
+        // Create Background
+        CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
         background.position = ccp( size.width/2 , size.height/2 );
         [self addChild:background];
+        _problem = [MathProblemView alloc];
+        [self addChild:_problem];
     
     }
     return self;
