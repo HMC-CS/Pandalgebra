@@ -24,7 +24,6 @@
 		4EE725691738441B0062A0C8 /* CreditsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE725681738441B0062A0C8 /* CreditsMenu.m */; };
 		4EE7256B1738466C0062A0C8 /* credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4EE7256A1738466C0062A0C8 /* credits.txt */; };
 		6FAF5043175D376300B59355 /* WaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAF5042175D376300B59355 /* WaitView.m */; };
-		6FAF5046175D431500B59355 /* MyCocos2DClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAF5045175D431400B59355 /* MyCocos2DClass.m */; };
 		AB1978F8172C9C010091A1D7 /* charactercandy.png in Resources */ = {isa = PBXBuildFile; fileRef = AB1978F7172C9C010091A1D7 /* charactercandy.png */; };
 		AB492BF417063CD300CA495A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF317063CD300CA495A /* QuartzCore.framework */; };
 		AB492BF617063CD300CA495A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB492BF517063CD300CA495A /* OpenGLES.framework */; };
@@ -197,8 +196,6 @@
 		4EE7256A1738466C0062A0C8 /* credits.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = credits.txt; path = Resources/credits.txt; sourceTree = "<group>"; };
 		6FAF5041175D376200B59355 /* WaitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitView.h; sourceTree = "<group>"; };
 		6FAF5042175D376300B59355 /* WaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitView.m; sourceTree = "<group>"; };
-		6FAF5044175D431300B59355 /* MyCocos2DClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCocos2DClass.h; sourceTree = "<group>"; };
-		6FAF5045175D431400B59355 /* MyCocos2DClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCocos2DClass.m; sourceTree = "<group>"; };
 		AB1978F7172C9C010091A1D7 /* charactercandy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charactercandy.png; sourceTree = "<group>"; };
 		AB492BF017063CD300CA495A /* pandalgebra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pandalgebra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB492BF317063CD300CA495A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -578,8 +575,6 @@
 				AB492C0617063CD300CA495A /* Resources */,
 				AB492C2017063CD300CA495A /* libs */,
 				AB492D7917063CD500CA495A /* Supporting Files */,
-				6FAF5044175D431300B59355 /* MyCocos2DClass.h */,
-				6FAF5045175D431400B59355 /* MyCocos2DClass.m */,
 			);
 			path = TeamTwoBeta;
 			sourceTree = "<group>";
@@ -1178,7 +1173,6 @@
 				2C586D8F1729EC5A002A9E8D /* InstructionsPage5.m in Sources */,
 				4EE725691738441B0062A0C8 /* CreditsMenu.m in Sources */,
 				6FAF5043175D376300B59355 /* WaitView.m in Sources */,
-				6FAF5046175D431500B59355 /* MyCocos2DClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
+#import "MathProblemView.h"
 
 
-@interface WaitView : CCLayer
+@interface WaitView : CCLayer{
+    MathProblemView *_problem;
+}
+
 
 +(id)scene;
+
+@property MathProblemView* problem;
 
 @end
