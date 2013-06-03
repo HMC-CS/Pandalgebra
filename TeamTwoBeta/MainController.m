@@ -157,7 +157,9 @@
     // displays the wait scene, if needed
     if (waitViewDisplay)
     {
-        [[CCDirector sharedDirector] pushScene:[WaitView node]];
+        WaitView* waitView = [[WaitView alloc] init];
+        waitView.problem = mathProblemView;
+        [[CCDirector sharedDirector] pushScene:(CCScene*)waitView];
         waitViewDisplay = NO;
     }
     
