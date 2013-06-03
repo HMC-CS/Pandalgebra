@@ -17,6 +17,7 @@
 {
     self = [super init];
     if (self) {
+        
         // Initialization code
         
         // Replace with the current problem later
@@ -28,11 +29,48 @@
         CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
         background.position = ccp( size.width/2 , size.height/2 );
         [self addChild:background];
-        _problem = [MathProblemView alloc];
-        [self addChild:_problem];
+        //_problem = [MathProblemView alloc];
+        //[self addChild:_problem];
+        
+        CCLabelTTF* label = [CCLabelTTF labelWithString: @"TEST" fontName:@"Arial" fontSize:50];
+        label.position = ccp(size.width/2,size.height/2);
+        [self addChild:label z:1 tag:1];
     
     }
     return self;
+}
+
+-(id) initWithProblem:(NSString*)problemString
+{
+    self = [super init];
+    if (self) {
+        NSLog(@"initing");
+        // Initialization code
+        
+        // Replace with the current problem later
+        
+        // Ask director for the window size
+        [self setIsTouchEnabled:YES];
+		CGSize size = [[CCDirector sharedDirector] winSize];
+        // Create Background
+        CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+        background.position = ccp( size.width/2 , size.height/2 );
+        [self addChild:background];
+        
+        NSLog(@"about to add problem");
+        CCLabelTTF* label = [CCLabelTTF labelWithString: problemString fontName:@"Arial" fontSize:50];
+
+        label.position = ccp(size.width/2,size.height/2);
+        [self addChild:label z:1 tag:1];
+
+        //_problem = problemView;
+        //_problem = [MathProblemView alloc];
+        //[self addChild:_problem];
+        
+    }
+    NSLog(@"inited");
+    return self;
+
 }
 
 /*
