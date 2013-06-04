@@ -67,6 +67,8 @@
         //_problem = [MathProblemView alloc];
         //[self addChild:_problem];
         
+        [self performSelector:@selector(endWaitScene:) withObject: nil afterDelay:10];
+        
     }
     NSLog(@"inited");
     return self;
@@ -86,6 +88,10 @@
 // return to  the game
 -(void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [[CCDirector sharedDirector] popScene];
+}
+
+-(void) endWaitScene: (id) sender{
     [[CCDirector sharedDirector] popScene];
 }
 
