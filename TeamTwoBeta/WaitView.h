@@ -12,12 +12,12 @@
 
 
 @interface WaitView : CCLayer{
-    NSString *_problem;
+    NSString *__unsafe_unretained _problem;
 }
 
 -(id) initWithProblem:(NSString*)problemString;
 +(id)scene;
 
-@property NSString* problem;
+@property (unsafe_unretained) NSString* problem;
 
 @end

@@ -126,10 +126,6 @@
     }
 }
 
--(void) dealloc
-{
-    [super dealloc];
-}
 
 // Sets all the beginning values of the character
 -(void) resetCharacter

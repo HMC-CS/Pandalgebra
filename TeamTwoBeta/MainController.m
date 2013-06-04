@@ -51,7 +51,6 @@
         
         noSound = [CCSprite spriteWithFile: @"soundSlash.png"];
         noSound.position = ccp(512,25);
-        [noSound retain];
 
         
         // Scoring Properties Initalized Here
@@ -101,7 +100,6 @@
     NSString *fourth = [questionAndAnswers objectAtIndex:4];
     
     [answerBarView setAnswerOptions:first secondOption:second thirdOption:third fourthOption:fourth];
-    [questionAndAnswers release];
     
     
 }

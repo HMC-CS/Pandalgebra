@@ -154,13 +154,15 @@ int NUM_SCORES = 5;
         }
     }
     
+   
+    
     // Write out to the files
     NSString* scoresOut = [scores componentsJoinedByString:@"\n"];
     [scoresOut writeToFile:scoresPath atomically:YES
-                  encoding:NSUTF8StringEncoding error:noErr];
+                  encoding:NSUTF8StringEncoding error:NULL];
     NSString* namesOut = [names componentsJoinedByString:@"\n"];
     [namesOut writeToFile:namesPath atomically:YES
-                  encoding:NSUTF8StringEncoding error:noErr];    
+                 encoding:NSUTF8StringEncoding error:NULL];
     
     // Write to the screen
     [self writeNames: names andScores: scores];
@@ -224,10 +226,6 @@ int NUM_SCORES = 5;
     }
 }
 
--(void) dealloc
-{
-    [super dealloc];
-}
 
 +(id) scene
 {
