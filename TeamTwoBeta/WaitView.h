@@ -18,6 +18,6 @@
 -(id) initWithProblem:(NSString*)problemString;
 +(id)scene;
 
-@property NSString* problem;
+@property (nonatomic, strong) NSString* problem;
 
 @end
