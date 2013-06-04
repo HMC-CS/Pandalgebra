@@ -23,7 +23,6 @@
 -(id) init;
 -(int) answerSelected:(NSArray*) platforms;
 -(void)update:(ccTime)deltaTime withPlatforms: (NSArray*)platforms andAnswer:(int)correctAnswer;
--(void) dealloc;
 -(void) resetCharacter;
 -(void) stopCharacter;
 -(void) removeCandy: (id) sender;

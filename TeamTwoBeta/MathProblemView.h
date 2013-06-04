@@ -11,13 +11,13 @@
 
 @interface MathProblemView : CCLayer
 {
-    NSString* _problemString;
+    NSString* __unsafe_unretained _problemString;
     CCLabelTTF* mathProblem;
 }
 
 -(void) setMathProblem: (NSString*) problem;
 -(void) update:(ccTime)deltaTime;
 
-@property NSString* problemString;
+@property (unsafe_unretained) NSString* problemString;
 
 @end
