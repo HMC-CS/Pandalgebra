@@ -8,6 +8,7 @@
 //
 
 #import "MainController.h"
+#import "HighScoreMenu.h"
 
 @implementation MainController
 
@@ -110,9 +111,13 @@
     if (numWrongChoices == 0) {
         score+=30;
     } else if (numWrongChoices == 1) {
-        score += 20;
-    } else if (numWrongChoices == 2) {
-        score += 10;
+        score += 15;
+    } else if (numWrongChoices == 3) {
+        score -= 15;
+    }
+    
+    if (score<0) {
+        score=0;
     }
     
     [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
@@ -126,9 +131,9 @@
     if (numWrongChoices == 0) {
         scoreValue = @"+30";
     } else if (numWrongChoices == 1) {
-        scoreValue = @"+20";
-    } else if (numWrongChoices == 2) {
-        scoreValue = @"+10";
+        scoreValue = @"+15";
+    } else if (numWrongChoices == 3) {
+        scoreValue = @"-15";
     }
     
     CCLabelTTF *label = [CCLabelTTF labelWithString:scoreValue fontName:@"Arial" fontSize:100];
@@ -172,6 +177,11 @@
         [[SimpleAudioEngine sharedEngine] playEffect:@"tada.mp3"];
         [answerBarView answerSelected];
         [characterView stopCharacter];
+        numTurns++;
+        
+        if (numTurns >= 10) {
+            [self performSelector:@selector(endCondition:)];
+        }
         [NSTimer scheduledTimerWithTimeInterval:2 target:self
                                        selector:@selector(loadNewProblem) userInfo:nil repeats:NO];
         [self displayScore];
@@ -244,6 +254,12 @@
 
 -(void) change{
     waitViewDisplay = NO;
+}
+
+-(void) endCondition: (id) sender {
+    HighScoreScene *highScoreScene = [HighScoreScene node];
+    highScoreScene.score = score;
+    [[CCDirector sharedDirector] replaceScene: (CCScene*)highScoreScene];
 }
 
 @end

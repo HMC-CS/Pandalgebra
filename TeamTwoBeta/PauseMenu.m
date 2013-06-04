@@ -38,9 +38,9 @@
         
         CCMenuItem *mainMenu = [CCMenuItemFont itemWithString:@"Main Menu" target:self selector:@selector(GoToMainMenu:)];
         
-        CCMenuItem *highscore = [CCMenuItemFont itemWithString:@"Save high score" target:self selector:@selector(GoToHighScoreMenu:)];
+        //CCMenuItem *highscore = [CCMenuItemFont itemWithString:@"Save high score" target:self selector:@selector(GoToHighScoreMenu:)];
         
-        CCMenu *menu = [CCMenu menuWithItems: resume, highscore, mainMenu, nil];
+        CCMenu *menu = [CCMenu menuWithItems: resume, mainMenu, nil];
         menu.position = ccp(240, 131.67f);
 
         

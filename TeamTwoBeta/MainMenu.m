@@ -44,6 +44,12 @@
                                                         scene:[InstructionsMenu node]]];
 		}];
         
+        CCMenuItem *highScore = [CCMenuItemFont itemWithString:@"High Scores" block:^(id sender) {
+			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
+                                                                                         scene:[HighScoreScene node]]];
+		}];
+        
+        
         CCMenuItem *credits = [CCMenuItemFont itemWithString:@"Credits" block:^(id sender) {
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
                                                         scene:[CreditsMenu node]]];
@@ -53,10 +59,10 @@
 			exit(0);
 		}];
 
-		CCMenu *menu = [CCMenu menuWithItems:playGame, instructions, credits, quit, nil];
+		CCMenu *menu = [CCMenu menuWithItems:playGame, instructions, highScore, credits, quit, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
-        [menu setPosition:ccp(512, 372)];
+        [menu setPosition:ccp(512, 300)];
         
         //play background music
 		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"cartoon_battle.mp3"];

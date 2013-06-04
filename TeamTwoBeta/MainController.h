@@ -32,6 +32,7 @@
     int problemDifficulty;
     CCSprite* noSound;
     BOOL waitViewDisplay;
+    int numTurns;
 }
 
 -(id) init;

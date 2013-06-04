@@ -54,7 +54,12 @@ int NUM_SCORES = 5;
         
         // Prompt the user for their name. Their score will then be added to the list
         // if appropriate.
-        [self promptForName];
+        if (_score > 0) {
+            [self promptForName];
+
+        } else {
+            [self displayScore];
+        }
     }
     
     return self;
@@ -65,6 +70,40 @@ int NUM_SCORES = 5;
     
     [[CCDirector sharedDirector] sendCleanupToScene];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[MainMenu node]]];
+}
+
+-(void) displayScore {
+    
+    // Get the document directory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains
+    (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *directory = [paths objectAtIndex:0];
+    
+    // Read in the scores
+    NSString* scoresPath = [NSString stringWithFormat:@"%@/savedscores.txt", directory];
+    
+    NSString* fileContents = [NSString stringWithContentsOfFile:scoresPath encoding:NSUTF8StringEncoding error:nil];
+    NSMutableArray* scores = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    // Read in the names
+    NSString* namesPath = [NSString stringWithFormat:@"%@/savednames.txt", directory];
+    fileContents = [NSString stringWithContentsOfFile:namesPath encoding:NSUTF8StringEncoding
+                                                error:nil];
+    NSMutableArray* names = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    // Initialize the arrays to default values if they're empty.
+    if ([names count] == 0) {
+        names = [NSMutableArray arrayWithCapacity:NUM_SCORES];
+        scores = [NSMutableArray arrayWithCapacity:NUM_SCORES];
+        for (int i = 0; i < NUM_SCORES; i++) {
+            [names insertObject:@"No one yet!" atIndex:i];
+            [scores insertObject:@"0" atIndex:i];
+        }
+    }
+    
+    //write to screen
+    [self writeNames: names andScores: scores];
+
 }
 
 -(void) addScore: (NSString*) userName

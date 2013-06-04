@@ -164,9 +164,9 @@
 		D83B936D1729E207008FB76E /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D83B936C1729E207008FB76E /* jump.mp3 */; };
 		D83B93711729EBCE008FB76E /* cartoon_battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D83B93701729EBCE008FB76E /* cartoon_battle.mp3 */; };
 		D83B9373172C7A61008FB76E /* tada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D83B9372172C7A61008FB76E /* tada.mp3 */; };
-		D86A5B5F172E238900EFD54A /* hard.txt in Resources */ = {isa = PBXBuildFile; fileRef = D86A5B5E172E238900EFD54A /* hard.txt */; };
-		D8A8BFA41708D99000997C86 /* easy.txt in Resources */ = {isa = PBXBuildFile; fileRef = D8A8BFA31708D99000997C86 /* easy.txt */; };
 		D8A8BFA71708E3ED00997C86 /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A8BFA61708E3ED00997C86 /* ProblemGenerator.m */; };
+		FD834223175D61CF00E4992C /* hard.txt in Resources */ = {isa = PBXBuildFile; fileRef = FD834221175D61CF00E4992C /* hard.txt */; };
+		FD834224175D61CF00E4992C /* easy.txt in Resources */ = {isa = PBXBuildFile; fileRef = FD834222175D61CF00E4992C /* easy.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -476,10 +476,10 @@
 		D83B936C1729E207008FB76E /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jump.mp3; path = Resources/jump.mp3; sourceTree = "<group>"; };
 		D83B93701729EBCE008FB76E /* cartoon_battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = cartoon_battle.mp3; path = Resources/cartoon_battle.mp3; sourceTree = "<group>"; };
 		D83B9372172C7A61008FB76E /* tada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = tada.mp3; path = Resources/tada.mp3; sourceTree = "<group>"; };
-		D86A5B5E172E238900EFD54A /* hard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hard.txt; path = Resources/hard.txt; sourceTree = "<group>"; };
-		D8A8BFA31708D99000997C86 /* easy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = easy.txt; path = Resources/easy.txt; sourceTree = "<group>"; };
 		D8A8BFA51708E3ED00997C86 /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
 		D8A8BFA61708E3ED00997C86 /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
+		FD834221175D61CF00E4992C /* hard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hard.txt; sourceTree = "<group>"; };
+		FD834222175D61CF00E4992C /* easy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = easy.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,8 +582,9 @@
 		AB492C0617063CD300CA495A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FD834221175D61CF00E4992C /* hard.txt */,
+				FD834222175D61CF00E4992C /* easy.txt */,
 				4EE7256A1738466C0062A0C8 /* credits.txt */,
-				D86A5B5E172E238900EFD54A /* hard.txt */,
 				4E209E66172E0DA60052A12F /* savednames.txt */,
 				AB7BA55E173B0A8E00670768 /* soundIcon.png */,
 				ABCBBB19173B0F2A0060276F /* soundSlash.png */,
@@ -597,7 +598,6 @@
 				2C586D831729E6CA002A9E8D /* instructionspage4.txt */,
 				2C586D851729E6E9002A9E8D /* instructionspage5.txt */,
 				D83B9366172120BC008FB76E /* pausebutton.png */,
-				D8A8BFA31708D99000997C86 /* easy.txt */,
 				AB492C0717063CD300CA495A /* Default.png */,
 				ABCBBB1B173B169E0060276F /* Default-Landscape~ipad.png */,
 				AB492C0B17063CD300CA495A /* fps_images.png */,
@@ -1024,7 +1024,6 @@
 				AB492C1C17063CD300CA495A /* Icon@2x.png in Resources */,
 				AB492C1F17063CD300CA495A /* iTunesArtwork in Resources */,
 				AB492D5D17063CD500CA495A /* ChangeLog in Resources */,
-				D8A8BFA41708D99000997C86 /* easy.txt in Resources */,
 				ABD9F4DD171BCAF600B7303F /* platforms.png in Resources */,
 				ABD9F4DF171BCB0600B7303F /* character.png in Resources */,
 				ABD9F4E1171BCDC800B7303F /* background.png in Resources */,
@@ -1039,12 +1038,13 @@
 				2C586D861729E6E9002A9E8D /* instructionspage5.txt in Resources */,
 				D83B9373172C7A61008FB76E /* tada.mp3 in Resources */,
 				AB1978F8172C9C010091A1D7 /* charactercandy.png in Resources */,
-				D86A5B5F172E238900EFD54A /* hard.txt in Resources */,
 				4E209E67172E0DA60052A12F /* savednames.txt in Resources */,
 				4EE7256B1738466C0062A0C8 /* credits.txt in Resources */,
 				AB7BA55F173B0A8E00670768 /* soundIcon.png in Resources */,
 				ABCBBB1A173B0F2A0060276F /* soundSlash.png in Resources */,
 				ABCBBB1C173B169E0060276F /* Default-Landscape~ipad.png in Resources */,
+				FD834223175D61CF00E4992C /* hard.txt in Resources */,
+				FD834224175D61CF00E4992C /* easy.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
