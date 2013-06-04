@@ -88,6 +88,7 @@
 // return to  the game
 -(void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(endWaitScene:) object:nil];
     [[CCDirector sharedDirector] popScene];
 }
 
