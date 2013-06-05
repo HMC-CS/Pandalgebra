@@ -1,19 +1,15 @@
+Funded by NSF grant #1042472, The Games Network: Games for students, games by students (PIs Sweedyk and Erlinger) and by the Dept. of Computer Science, Harvey Mudd College
+
 CODED BY
 Izzy Funke, Abby Gregory, Miranda Parker, and Ari Schlesinger
 
 ADDITIONAL CODING BY
 Kathryn Aplin, Haley Erickson, Paige Garratt, Azubuike Ndefo-Dahl, Carson Ramsden, and Jean Sung
 
-BACKGROUND IMAGE
-Original, unedited image by Mike Lowe. 
-http://www.flickr.com/photos/mikelowe/17520932/sizes/l
-
-JUMP SOUND
+RESOURCES
+Original, unedited background image by Mike Lowe. 
+     http://www.flickr.com/photos/mikelowe/17520932/sizes/l
 Mario Jumping sound. http://soundbible.com/tags-game.html
-
-CORRECT ANSWER SOUND
-http://soundbible.com/1003-Ta-Da.html
-
-BACKGROUND MUSIC
-Cartoon Battle from the royalty-free music at incompetech.com. 
-http://incompetech.com/music/royalty-free
+Correct Answer. http://soundbible.com/1003-Ta-Da.html
+Cartoon Battle from the royalty-free music at incompetech.com.
+     http://incompetech.com/music/royalty-free
