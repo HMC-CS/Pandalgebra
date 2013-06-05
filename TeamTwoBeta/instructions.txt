@@ -1,3 +1,7 @@
-Welcome to PANDALGEBRA! Peppermint the Panda is lost in the 
-bamboo forests of China! He is hungry and needs to answer 
-math problems to find his favorite food: peppermint!
+When you begin the game, you will be shown an algebra problem.
+You have 10 seconds to work on the problem, then you must
+tilt the iPad to bounce the panda onto the correct answer.
+Getting it on the first try gives you more points! There are
+10 problems per level.
+
+Hint: If you don't want to wait 10 seconds, tap the screen!

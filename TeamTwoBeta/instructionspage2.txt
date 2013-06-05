@@ -1,6 +1,6 @@
-Problems:
+You will get the most points if 
+you chose the correct answer on the first try.
+You will play through 10 problems. At the end of 10 problems 
+the game will end and you will be directed to the high score menu. 
 
-At the top of the screen, there is an algebra problem. 
-Below the problem there are four possible answers. 
-Solve for the variable in each algebra problem by making
-Peppermint jump onto the correct answer. 
+Try to score as high as possible, good luck!
