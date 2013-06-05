@@ -50,13 +50,13 @@
         
         // Create the label
         CCLabelTTF *label = [CCLabelTTF labelWithString:fileContents
-                                             dimensions:CGSizeMake(600, 500)
+                                             dimensions:CGSizeMake(700, 500)
                                              hAlignment:UITextAlignmentLeft
                                              fontName:@"Marker Felt" fontSize:24];
         [label setColor:ccWHITE];
         
         // Position it on the screen
-        label.position = ccp(412,362);
+        label.position = ccp(432,362);
         
         // Add it to the scene so it can be displayed
         [self addChild:label];
@@ -68,7 +68,7 @@
 		}];
         
         CCMenu *menu = [CCMenu menuWithItems: back, nil];
-        menu.position = ccp(512, 100);
+        menu.position = ccp(512, 70);
         
         //[menu alignItemsHorizontallyWithPadding:250];
         
