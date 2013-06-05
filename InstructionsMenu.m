@@ -42,14 +42,16 @@
                                                                             scene:[MainMenu node]]];
 		}];
         
+        /*
         CCMenuItem *next = [CCMenuItemFont itemWithString:@"Next Section" block:^(id sender) {
             
 			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
                                                                                          scene:[InstructionsPage2 node]]];
 		}];
+         */
         
-        CCMenu *menu = [CCMenu menuWithItems: back, next, nil];
-        menu.position = ccp(700, 30);
+        CCMenu *menu = [CCMenu menuWithItems: back, nil];
+        menu.position = ccp(512, 30);
         
         [menu alignItemsHorizontallyWithPadding:250];
         
@@ -60,7 +62,7 @@
         NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         
         // Create the label
-        CCLabelTTF *label = [CCLabelTTF labelWithString:fileContents fontName:@"Marker Felt" fontSize:30];
+        CCLabelTTF *label = [CCLabelTTF labelWithString:fileContents fontName:@"Marker Felt" fontSize:20];
         [label setColor:ccWHITE];
         [label setFontSize:34];
         

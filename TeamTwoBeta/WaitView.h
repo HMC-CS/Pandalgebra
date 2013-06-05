@@ -18,6 +18,8 @@
 -(id) initWithProblem:(NSString*)problemString;
 +(id)scene;
 
+
 @property (unsafe_unretained) NSString* problem;
+
 
 @end
