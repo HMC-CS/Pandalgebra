@@ -1,7 +1,0 @@
-Scoring:
-
-During game play, there is a score in the bottom left corner of 
-the screen. If you land on a correct answer on the first try, 
-you get 30 points.  You get 10 fewer points each time you 
-incorrectly answer the problem. Bouncing off the ground does 
-not affect scoring.

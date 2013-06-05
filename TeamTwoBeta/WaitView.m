@@ -44,10 +44,7 @@
 {
     self = [super init];
     if (self) {
-        NSLog(@"initing");
         // Initialization code
-        
-        // Replace with the current problem later
         
         // Ask director for the window size
         [self setIsTouchEnabled:YES];
@@ -57,7 +54,6 @@
         background.position = ccp( size.width/2 , size.height/2 );
         [self addChild:background];
         
-        NSLog(@"about to add problem");
         CCLabelTTF* label = [CCLabelTTF labelWithString: problemString fontName:@"Arial" fontSize:50];
 
         label.position = ccp(size.width/2,size.height/2);
@@ -70,7 +66,6 @@
         [self performSelector:@selector(endWaitScene:) withObject: nil afterDelay:10];
         
     }
-    NSLog(@"inited");
     return self;
 
 }
