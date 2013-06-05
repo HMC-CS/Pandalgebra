@@ -48,13 +48,13 @@
                                                                                          scene:[InstructionsMenu node]]];
 		}];
         
-        CCMenuItem *next = [CCMenuItemFont itemWithString:@"Next Section" block:^(id sender) {
+        /*CCMenuItem *next = [CCMenuItemFont itemWithString:@"Next Section" block:^(id sender) {
             
 			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
                                                                                          scene:[InstructionsPage3 node]]];
-		}];
+		}];*/
         
-        CCMenu *menu = [CCMenu menuWithItems: previous, back, next, nil];
+        CCMenu *menu = [CCMenu menuWithItems: previous, back, nil];
         menu.position = ccp(500, 30);
         
         [menu alignItemsHorizontallyWithPadding:250];
