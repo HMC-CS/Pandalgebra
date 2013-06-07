@@ -30,6 +30,8 @@ int NUM_SCORES = 5;
         
         // Create menu nackground
         CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+        NSAssert(background != nil, @"background.png not found. Failed to initialize HighScoreScene");
+
         background.position = ccp( size.width/2, size.height/2);
         [self addChild:background];
         
@@ -81,7 +83,7 @@ int NUM_SCORES = 5;
     
     // Read in the scores
     NSString* scoresPath = [NSString stringWithFormat:@"%@/savedscores.txt", directory];
-    
+
     NSString* fileContents = [NSString stringWithContentsOfFile:scoresPath encoding:NSUTF8StringEncoding error:nil];
     NSMutableArray* scores = (NSMutableArray*)[fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
@@ -102,12 +104,18 @@ int NUM_SCORES = 5;
     }
     
     //write to screen
+    NSAssert(names != nil, @"Names not found for high scores");
+    NSAssert(scores != nil, @"Scores not found for high scores");
+
+
     [self writeNames: names andScores: scores];
 
 }
 
 -(void) addScore: (NSString*) userName
 {
+    NSAssert(_score >= 0,@"Score must be greater than or equal to zero");
+
     // Get the user's information
     NSMutableString* userScore = [NSMutableString stringWithFormat:@"%d", _score];
     

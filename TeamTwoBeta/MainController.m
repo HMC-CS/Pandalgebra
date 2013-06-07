@@ -32,6 +32,8 @@
         problemDifficulty = 0;
         
         CCMenuItem *pause = [CCMenuItemImage itemWithNormalImage:@"pausebutton.png" selectedImage: @"pausebutton.png" target:self selector:@selector(pause:)];
+        NSAssert(pause != nil, @"pausebutton.png not found. Failed to initialize MainController");
+
         
         CCMenu *pauseButton = [CCMenu menuWithItems: pause, nil];
         
@@ -42,6 +44,8 @@
         backgroundMusicPlaying = TRUE;
         
         CCMenuItem *backgroundMusic = [CCMenuItemImage itemWithNormalImage:@"soundIcon.png" selectedImage: @"soundIcon.png" target:self selector:@selector(changeBackgroundMusic:)];
+        NSAssert(backgroundMusic != nil, @"soundIcon.png not found. Failed to initialize MainController");
+
         
         CCMenu *backgroundMusicButton = [CCMenu menuWithItems: backgroundMusic, nil];
         
@@ -85,6 +89,8 @@
     
     // Get the questions and answers from the problem generator.
     NSMutableArray *questionAndAnswers = [ProblemGenerator loadProblem: problemDifficulty];
+    NSAssert(questionAndAnswers != nil, @"Equation and answers failed to load. MainController could not load new problem");
+
     
     // Make sure that this is a different problem from the previous one.
     while ([mathProblemView.problemString isEqualToString: questionAndAnswers[0]])
@@ -117,6 +123,8 @@
     if (score<0) {
         score=0;
     }
+    
+    NSAssert(score>=0, @"Score must be greater than or equal to zero in MainController");
     
     [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
 }
