@@ -4,7 +4,7 @@
 //
 //  Created by Kathryn Aplin on 6/3/13.
 //
-//
+// This comment is a test by Kate. It shouldn't cause conflicts or anything, I just need to check smthg
 
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
