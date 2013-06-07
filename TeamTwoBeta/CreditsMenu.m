@@ -27,6 +27,8 @@
         
         // Create Instructions Background
         CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+        NSAssert(background != nil, @"background.png not found. Failed to initialize Credits");
+
         background.position = ccp( size.width/2, size.height/2);
         [self addChild:background];
         
@@ -46,6 +48,7 @@
         
         // Get the file from the resources
         NSString* path = [[NSBundle mainBundle] pathForResource:@"credits" ofType:@"txt"];
+        NSAssert(path != nil, @"credits.txt not found. Failed to load Credits screen");
         NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         
         // Create the label

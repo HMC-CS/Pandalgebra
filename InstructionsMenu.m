@@ -28,6 +28,8 @@
         
         // Create Instructions Background
         CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+        NSAssert(background != nil, @"background.png not found. Failed to initialize Instructions");
+
         background.position = ccp( size.width/2, size.height/2);
         [self addChild:background];
         
@@ -59,6 +61,7 @@
         
         // Get the file from the resources
         NSString* path = [[NSBundle mainBundle] pathForResource:@"instructions" ofType:@"txt"];
+        NSAssert(path!=nil, @"instructions.txt not found. Failed to load Instructions screen");
         NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         
         // Create the label

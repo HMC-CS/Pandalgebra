@@ -48,6 +48,8 @@
 {   
     // Consider each platform.
     // plathform width and height need to be confirmed
+    
+    
         
     float platformWidth = 100.0;
     float platformImpactHeight = 40.0;

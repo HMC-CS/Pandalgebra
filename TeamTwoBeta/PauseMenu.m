@@ -22,6 +22,8 @@
         
         // Create Menu Background
         CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+        NSAssert(background != nil, @"background.png not found. Failed to initialize PauseMenu");
+
         background.position = ccp( size.width/2 , size.height/2 );
         [self addChild:background];
         
