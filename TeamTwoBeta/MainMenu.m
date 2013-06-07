@@ -20,6 +20,7 @@
         
         // Create Menu Background
         CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+        NSAssert(background != nil, @"background.png not found. Failed to initialize MainMenu");
         //background.position = ccp( size.width/2 + 128, size.height/2 - 128);
         background.position = ccp(512, 384);
         [self addChild:background];
@@ -65,7 +66,10 @@
         [menu setPosition:ccp(512, 300)];
         
         //play background music
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"cartoon_battle" ofType:@"mp3"];
+        NSAssert(path != nil, @"Failed to locate background music cartoon_battle.mp3");
 		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"cartoon_battle.mp3"];
+        
         
 		// Add the menu to the layer
 		[self addChild:menu];
