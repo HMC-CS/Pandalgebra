@@ -15,12 +15,12 @@
     UIAlertView *message;
 }
 
--(id) init;
+-(id) initWithScore: (int) score;
 -(void) GoToMainMenu: (id) sender;
 -(void) addScore: (NSString*) userName;
 -(NSString*) promptForName;
 -(void) writeNames: (NSMutableArray*) names andScores: (NSMutableArray*) scores;
-+(id) scene;
++(CCScene *) sceneWithScore: (int) score;
 
 @property int score;
 @end

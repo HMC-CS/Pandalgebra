@@ -19,11 +19,12 @@
 int NUM_SCORES = 5;
 
 @implementation HighScoreScene
-@synthesize score = _score;
 
--(id) init
+-(id) initWithScore:(int)score
 {
     if (self = [super init]) {
+        
+        _score = score;
         
         // Ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
@@ -42,6 +43,7 @@ int NUM_SCORES = 5;
 		
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:28];
+        [CCMenuItemFont setFontName:@"Marker Felt"];
         
         // Menu item for returning to the main menu
         CCMenuItem *quit = [CCMenuItemFont itemWithString:@"Quit" target:self selector:@selector(GoToMainMenu:)];
@@ -57,9 +59,11 @@ int NUM_SCORES = 5;
         // Prompt the user for their name. Their score will then be added to the list
         // if appropriate.
         if (_score > 0) {
+            NSLog(@"prompting for name");
             [self promptForName];
 
         } else {
+            NSLog(@"displaying scores");
             [self displayScore];
         }
     }
@@ -235,12 +239,12 @@ int NUM_SCORES = 5;
 }
 
 
-+(id) scene
-{
-    CCScene *highScoreScene = [CCScene node];
-    HighScoreScene *layer = [HighScoreScene node];
-    [highScoreScene addChild:layer];
-    return highScoreScene;
++(CCScene *) sceneWithScore: (int) score{
+    CCScene *scene = [CCScene node];
+    HighScoreScene *layer = [[HighScoreScene alloc] initWithScore: score];
+    [scene addChild: layer];
+    return scene;
 }
+
 
 @end

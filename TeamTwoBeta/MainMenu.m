@@ -47,7 +47,7 @@
         
         CCMenuItem *highScore = [CCMenuItemFont itemWithString:@"High Scores" block:^(id sender) {
 			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
-                                                                                         scene:[HighScoreScene node]]];
+                                                                                         scene:[HighScoreScene sceneWithScore:0]]];
 		}];
         
         

@@ -178,14 +178,15 @@
         [answerBarView answerSelected];
         [characterView stopCharacter];
         numTurns++;
+        [self displayScore];
+        [self addPoints];
         
         if (numTurns >= 10) {
-            [self performSelector:@selector(endCondition:)];
+            [self performSelector:@selector(endCondition)];
         }
         [NSTimer scheduledTimerWithTimeInterval:2 target:self
                                        selector:@selector(loadNewProblem) userInfo:nil repeats:NO];
-        [self displayScore];
-        [self addPoints];
+        
         numWrongChoices = 0;
         characterView.answerHit = -1;
     }
@@ -256,10 +257,9 @@
     waitViewDisplay = NO;
 }
 
--(void) endCondition: (id) sender {
-    HighScoreScene *highScoreScene = [HighScoreScene node];
-    highScoreScene.score = score;
-    [[CCDirector sharedDirector] replaceScene: (CCScene*)highScoreScene];
+-(void) endCondition {
+    NSLog(@"replacing scene");
+    [[CCDirector sharedDirector] replaceScene: [HighScoreScene sceneWithScore:score]];
 }
 
 @end
