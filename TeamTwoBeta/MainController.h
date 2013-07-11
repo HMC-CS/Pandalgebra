@@ -33,6 +33,8 @@
     CCSprite* noSound;
     BOOL waitViewDisplay;
     int numTurns;
+    
+    NSMutableArray* previousProblems;
 }
 
 -(id) init;

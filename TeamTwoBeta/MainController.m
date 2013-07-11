@@ -15,6 +15,7 @@
 -(id) init
 {
     if(self = [super init]){
+        previousProblems = [[NSMutableArray alloc] init];
         [self scheduleUpdate];
         
         mathProblemView = [MathProblemView node];
@@ -90,11 +91,28 @@
     // Get the questions and answers from the problem generator.
     NSMutableArray *questionAndAnswers = [ProblemGenerator loadProblem: problemDifficulty];
     NSAssert(questionAndAnswers != nil, @"Equation and answers failed to load. MainController could not load new problem");
-
     
     // Make sure that this is a different problem from the previous one.
     while ([mathProblemView.problemString isEqualToString: questionAndAnswers[0]])
         questionAndAnswers = [ProblemGenerator loadProblem: problemDifficulty];
+    
+    BOOL problemIsInPreviousProblems = YES;
+    while (problemIsInPreviousProblems) {
+        problemIsInPreviousProblems = NO;
+        for (int i = 0; i<[previousProblems count];i++){
+            NSString* previous = [previousProblems objectAtIndex:i];
+            NSString* currentTry = [questionAndAnswers objectAtIndex:0];
+            if ([previous isEqualToString:currentTry]){
+                problemIsInPreviousProblems = YES;
+            }
+        }
+        if (problemIsInPreviousProblems){
+            [ProblemGenerator loadProblem:problemDifficulty];
+        }
+    }
+    
+    // add the problem to the array or problems used
+    [previousProblems addObject:[questionAndAnswers objectAtIndex:0]];
     
     // Set the math problem.
     [mathProblemView setMathProblem:[questionAndAnswers objectAtIndex:0]];
