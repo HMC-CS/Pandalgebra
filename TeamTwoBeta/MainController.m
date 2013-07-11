@@ -93,23 +93,27 @@
     NSAssert(questionAndAnswers != nil, @"Equation and answers failed to load. MainController could not load new problem");
     
     // Make sure that this is a different problem from the previous one.
-    while ([mathProblemView.problemString isEqualToString: questionAndAnswers[0]])
-        questionAndAnswers = [ProblemGenerator loadProblem: problemDifficulty];
+   // while ([mathProblemView.problemString isEqualToString: questionAndAnswers[0]])
+    //    questionAndAnswers = [ProblemGenerator loadProblem: problemDifficulty];
     
     BOOL problemIsInPreviousProblems = YES;
     while (problemIsInPreviousProblems) {
+        NSLog(@"start of while loop");
         problemIsInPreviousProblems = NO;
         for (int i = 0; i<[previousProblems count];i++){
             NSString* previous = [previousProblems objectAtIndex:i];
             NSString* currentTry = [questionAndAnswers objectAtIndex:0];
             if ([previous isEqualToString:currentTry]){
+                NSLog(@"we have an equal");
                 problemIsInPreviousProblems = YES;
             }
         }
         if (problemIsInPreviousProblems){
-            [ProblemGenerator loadProblem:problemDifficulty];
+            NSLog(@"trying a new problem");
+            questionAndAnswers = [ProblemGenerator loadProblem:problemDifficulty];
         }
     }
+    NSLog(@"out of while loop");
     
     // add the problem to the array or problems used
     [previousProblems addObject:[questionAndAnswers objectAtIndex:0]];
