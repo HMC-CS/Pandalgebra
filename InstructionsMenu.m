@@ -44,13 +44,7 @@
                                                                             scene:[MainMenu node]]];
 		}];
         
-        /*
-        CCMenuItem *next = [CCMenuItemFont itemWithString:@"Next Section" block:^(id sender) {
-            
-			[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1
-                                                                                         scene:[InstructionsPage2 node]]];
-		}];
-         */
+
         
         CCMenu *menu = [CCMenu menuWithItems: back, nil];
         menu.position = ccp(512, 30);
