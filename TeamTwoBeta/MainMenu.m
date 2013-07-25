@@ -56,11 +56,9 @@
                                                         scene:[CreditsMenu node]]];
 		}];
         
-        CCMenuItem *quit = [CCMenuItemFont itemWithString:@"Quit" block:^(id sender) {
-			exit(0);
-		}];
+  
 
-		CCMenu *menu = [CCMenu menuWithItems:playGame, instructions, highScore, credits, quit, nil];
+		CCMenu *menu = [CCMenu menuWithItems:playGame, instructions, highScore, credits, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
         [menu setPosition:ccp(512, 300)];
